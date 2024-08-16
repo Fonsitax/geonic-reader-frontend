@@ -5,12 +5,13 @@ import Catalog from './Catalog.jsx';
 function App() {
   return (
     <div className=' mx-12 py-8' >
-      <div className="bg-white  w-[900px] h-[100px] rounded-lg  ">
+    
         <nav>
-          <ul className="flex space-x-10 justify-center py-8
-          ">
-            <li><a href="#home" className="text-blue-500 font-semibold ">Home</a></li>
-            <li><a href="#catalog" className="text-blue-500 font-semibold ">Catalog</a></li>
+          <ul className="flex space-x-10 justify-center py-8">
+            <li><a href="#logo" className="text-blue-500 font-semibold text-2xl">Geonic Reader</a></li>
+            <li><a href="#home" className="text-blue-500 font-semibold">Home</a></li>
+            <li><a href="#catalog" className="text-blue-500 font-semibold">Catalog</a></li>
+            <li><a href="#favorite" className="text-blue-500 font-semibold">Favorite</a></li>
           </ul>
         </nav>
         <div id="home">
@@ -19,7 +20,7 @@ function App() {
         <div id="catalog">
           <Catalog />
         </div>
-      </div>
+      
     </div>
   );
 }
