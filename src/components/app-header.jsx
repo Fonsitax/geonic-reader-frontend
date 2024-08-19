@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useMyContext } from '../context/MyContext';
 
 
-const Header = () => {
+const AppHeader = () => {
   const { basename } = useMyContext(); 
 
   return (
@@ -13,13 +13,13 @@ const Header = () => {
       <nav aria-label="Main navigation">
         <ul className="flex space-x-4">
           <li>
-            <NavLink exact to={`${basename}/`} activeClassName="text-white-300">Home</NavLink>
+            <NavLink exact to={`${basename}/`} className="text-white-300">Home</NavLink>
           </li>
           <li>
-            <NavLink to={`${basename}/catalog`} activeClassName="text-white-300">Catalog</NavLink>
+            <NavLink to={`${basename}/catalog`} className="text-white-300">Catalog</NavLink>
           </li>
           <li>
-            <NavLink to={`${basename}/favorited`} activeClassName="text-white-300">Favorited</NavLink>
+            <NavLink to={`${basename}/favorited`} className="text-white-300">Favorited</NavLink>
           </li>
         </ul>
       </nav>
@@ -27,4 +27,4 @@ const Header = () => {
   );
 }
 
-export default Header;
+export default AppHeader;
