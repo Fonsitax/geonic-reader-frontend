@@ -3,18 +3,18 @@ import { getAllReadings, getReadingByCountry, getReadingById } from '../services
 
 const Home = () => {
 
-    function onTestReadingAll() {
-        const response = getAllReadings();
+    async function onTestReadingAll() {
+        const response = await getAllReadings();
         console.log('readingAll: ', response);
     }
 
-    function onTestReadingById() {
-        const response = getReadingById(2);
+    async function onTestReadingById() {
+        const response = await getReadingById(2);
         console.log('ReadingById: ', response);
     }
 
-    function onTestReadingByCountry() {
-        const response = getReadingByCountry('china');
+    async function onTestReadingByCountry() {
+        const response = await getReadingByCountry('china');
         console.log('ReadingByCountry: ', response);
     }
 

@@ -30,4 +30,4 @@ function getReadingByCountry(country) {
         });
 }
 
-export {getAllReadings, getReadingByCountry, getReadingById};
+export { getAllReadings, getReadingByCountry, getReadingById };
