@@ -1,28 +1,33 @@
-import { useState } from 'react';
 import axios from 'axios';
 
 function getAllReadings() {
-    const [data, setData] = useState(null);
-
-    console.log('getAllReadings');
-    axios.get('/readings')
+    return axios.get('/api/readings/all')
         .then((response) => {
-            console.log('response: ', response.data);
-            setData(response.data);
+            return response.data;
         })
         .catch((error) => {
             console.error('Error fetching getting all readings: ', error);
         });
-    console.log(data);
 }
-/*
+
 function getReadingById(id) {
-  return axios.get(`/readings/${id}`);
+    return axios.get(`/api/readings/id/${id}`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            console.error(`Error fetching getting reading by id: ${id} : `, error);
+        });
 }
 
 function getReadingByCountry(country) {
-  return axios.get(`/readings/country/${country}`);
+    return axios.get(`/api/readings/country/${country}`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            console.error(`Error fetching getting readings by country: ${country} : `, error);
+        });
 }
-*/
 
-export { getAllReadings };
+export {getAllReadings, getReadingByCountry, getReadingById};
