@@ -8,7 +8,7 @@ const Home = () => {
 
   function onTest() {  
     getAllReadings();
-    console.log('onTest');
+    console.log('onTest1');
   }
 
 
