@@ -7,7 +7,7 @@ export const useMyContext = () => {
 };
 
 export const MyProvider = ({ children }) => {
-    const [basename, setBasename] = useState('/home');
+    const [basename, setBasename] = useState('');	
 
     return (
         <MyContext.Provider value={{ basename, setBasename }}>
