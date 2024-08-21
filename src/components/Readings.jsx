@@ -14,6 +14,28 @@ const Readings = () => {
         fetchReadings();
     } , []);    
 
+
+    const addToFavorites = (id) => {
+        const favoriteReadings = JSON.parse(localStorage.getItem('favoriteReadings')) || [];
+        const reading = readings.find(r => r.id === id);
+        
+        if (reading && !favoriteReadings.some(fav => fav.id === id)) {
+            favoriteReadings.push(reading);
+            localStorage.setItem('favoriteReadings', JSON.stringify(favoriteReadings));
+            alert(`${reading.title} has been added to your favorites!`);
+        } else {
+            alert(`${reading.title} is already in your favorites!`);
+        }
+    };
+
+    const removeFromFavorites = (id) => {
+        const newFavorites = favoriteReadings.filter(r => r.id !== id);
+        
+        setFavoriteReadings(newFavorites);
+        localStorage.setItem('favoriteReadings', JSON.stringify(newFavorites));
+        alert(`Reading has been removed from your favorites!`);
+    };
+
     return (
         <div className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {readings.map((reading) => (
@@ -25,6 +47,8 @@ const Readings = () => {
                     title={reading.title}
                     description={reading.description}
                     text={reading.text}
+                    onFavorite={addToFavorites}             // Pass the addToFavorites function to the ReadingCard
+                    onRemoveFavorite={removeFromFavorites}  // Pass the removeFromFavorites function to the ReadingCard
                 />
             ))}
         </div>

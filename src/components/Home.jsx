@@ -1,7 +1,5 @@
 import { getAllReadings, getReadingByCountry, getReadingById } from '../services/readings-service';
 
-
-
 const Home = () => {
 
     async function onTestReadingAll() {

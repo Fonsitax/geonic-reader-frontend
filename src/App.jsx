@@ -2,6 +2,7 @@ import React from "react";
 import AppHeader from './components/app-header.jsx';
 import AppFooter from './components/app-footer.jsx';
 import Readings from './components/readings.jsx';
+import Favorites from "./pages/Favorites.jsx";
 import ReadingText from "./pages/ReadingText.jsx";
 import Home from './components/home.jsx';
 import './index.css';
@@ -17,7 +18,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/readings" element={<Readings />} />
               <Route path="/reading/:id" element={<ReadingText />} />
-              <Route path="/favorited" element={<Home />} />
+              <Route path="/favorited" element={<Favorites />} />
           </Routes>
       <AppFooter />
     </Router>
