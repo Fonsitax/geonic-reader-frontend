@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useMyContext } from "../context/MyContext";
 
 const ReadingCard = ({ id, image, title, country, description, text, onFavorite, onRemoveFavorite }) => {
+const basename = useMyContext().basename;
+console.log(image);
     return (
         <div className="max-w-sm bg-gray-50 border border-indigo-200 rounded-lg shadow dark:bg-indigo-900 dark:border-indigo-700">
             <img src={image} alt={null}/>
@@ -29,10 +32,13 @@ const ReadingCard = ({ id, image, title, country, description, text, onFavorite,
                     className="text-red-500 hover:text-red-700 mt-2">
                     Unfavorite
                 </button>
-                
-                <button className="bg-indigo-500 hover:bg-indigo-300 text-white font-bold py-2 px-4 rounded ">
+                <NavLink to={`${basename}/reading/${id}`}>
+                <button 
+                className="bg-indigo-500 hover:bg-indigo-300 text-white font-bold py-2 px-4 rounded ">     
                     Read More 
                 </button>
+                </NavLink>
+                
             </div>
                 
 
