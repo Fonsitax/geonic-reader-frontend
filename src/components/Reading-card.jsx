@@ -6,17 +6,17 @@ const ReadingCard = ({ id, image, title, country, description, text, onFavorite,
 const basename = useMyContext().basename;
 console.log(image);
     return (
-        <div className="max-w-sm bg-gray-50 border border-indigo-200 rounded-lg shadow dark:bg-indigo-900 dark:border-indigo-700">
+        <div className="max-w-sm bg-gray-50 border border-indigo-200 rounded-lg shadow dark:bg-indigo-900 dark:border-indigo-700 ">
             <img src={image} alt={null}/>
             
             <div className="p-5">
-                <div className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <div className="mx-2 text-2xl font-bold tracking-tight text-indigo-900">
                     {title}
                 </div>
-            <span className="font-bold">
+            <span className=" ml-2 font-bold uppercase text-indigo-500 underline">
                     {country}
             </span>
-                <p className="mb-3 text-gray-700 dark:text-gray-400">
+                <p className="mx-2 text-indigo-900 text-justify leading-normal ">
                     {description}
                 </p>     
             
@@ -34,7 +34,7 @@ console.log(image);
                 </button>
                 <NavLink to={`${basename}/reading/${id}`}>
                 <button 
-                className="bg-indigo-500 hover:bg-indigo-300 text-white font-bold py-2 px-4 rounded ">     
+                className="bg-indigo-500 hover:bg-indigo-300 text-white font-bold py-2 px-4 rounded-full">     
                     Read More 
                 </button>
                 </NavLink>

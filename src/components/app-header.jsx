@@ -7,10 +7,10 @@ const AppHeader = () => {
   const { basename } = useMyContext(); 
 
   return (
-    <header className="bg-indigo-500 text-white p-4 flex justify-between items-center">
-      <h1 className="text-2xl font-semibold">Geonic Reader</h1>
+    <header className=" text-indigo-700 pl-52 pr-52 pt-10 pb-8 flex justify-between items-center ">
+      <h1 className="text-3xl font-semibold">Geonic Reader</h1>
       <nav aria-label="Main navigation">
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-4 font-semibold text-xl ">
           <li>
             <NavLink to={`${basename}/`} className="text-white-300">Home</NavLink>
           </li>
