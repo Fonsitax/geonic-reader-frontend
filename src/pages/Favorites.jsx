@@ -16,7 +16,7 @@ const Favorites = () => {
                     <ReadingCard
                         key={reading.id}
                         id={reading.id}
-                        image={reading.image_url}
+                        image={reading.image}
                         country={reading.country}
                         title={reading.title}
                         description={reading.description}
