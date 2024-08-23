@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { getAllReadings } from "../services/readings-service";
-import ReadingCard from "../components/Reading-card";
+import ReadingCard from "../components/reading-card.jsx";
 
 const Readings = () => {
     const [readings, setReadings] = React.useState([]);

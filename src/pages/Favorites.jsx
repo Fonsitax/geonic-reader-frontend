@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ReadingCard from "../components/Reading-card";
+import ReadingCard from "../components/reading-card.jsx";
 
 const Favorites = () => {
     const [favorites, setFavorites] = React.useState([]);
