@@ -34,7 +34,7 @@ const ReadingCard = ({ id, image, title, country, description, text, onFavorite,
     return (
         <div
             className="max-w-sm bg-gray-100 border border-indigo-200 rounded-xl shadow dark:bg-indigo-950 dark:border-indigo-700 ">
-            <img src={image} alt={null}/>
+            <img className="h-64 w-full rounded-t-xl" src={image} alt={null}/>
 
             <div className="p-5">
                 <div className="mx-2 text-2xl font-bold tracking-tight text-indigo-900">
