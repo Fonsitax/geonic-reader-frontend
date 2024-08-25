@@ -50,7 +50,7 @@ const ReadingCard = ({ id, image, country, title, description, text, onFavorite,
                 <span className=" ml-2 font-medium uppercase text-indigo-500">
                     {country}
                 </span>
-                    <div className="mx-2 text-2xl font-bold tracking-tight text-indigo-900">
+                    <div className="mx-2 text-2xl font-medium tracking-tight text-indigo-900">
                         {title}
                     </div>   
                         <p className="mx-2 text-indigo-900 text-justify leading-normal ">
@@ -66,22 +66,23 @@ const ReadingCard = ({ id, image, country, title, description, text, onFavorite,
                          onClick={() => handleRemoveFavorite()}
                             className="text-red-500 hover:text-red-700 mt-2"
                      >
-                            Unfavorite
+                            💙
                         </button>
                  ) : (
                         <button
                         onClick={() => handleAddFavorite()}
                         className="text-blue-500 hover:text-blue-700 mt-2"
+                        
                     >
-                        Add to Favorite
+                        🤍
                          </button>
                 )}
                 </div>
 
                     <NavLink to={`${basename}/reading/${id}`}>
                         <button
-                            className="bg-indigo-700 hover:bg-indigo-300 text-white font-bold py-2 px-4 rounded-full">
-                            Read this card
+                            className="bg-indigo-700 hover:bg-indigo-300 text-white font-bold py-2 px-4 rounded-full font-medium">
+                            Read this card 📖
                         </button>
                     </NavLink>
                 </div>
