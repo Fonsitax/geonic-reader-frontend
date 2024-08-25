@@ -8,18 +8,17 @@ import Home from './pages/Home.jsx';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
 const App = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      
       <Router>
         <AppHeader />
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/readings" element={<Readings />} />
               <Route path="/reading/:id" element={<ReadingText />} />
-              <Route path="/favorited" element={<Favorites />} />
-          
+              <Route path="/favorited" element={<Favorites />} />       
           </Routes>
       <AppFooter />
     </Router>
