@@ -30,7 +30,7 @@ const Readings = () => {
     };
 
     return (
-        <div className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {readings.map((reading) => (
                 <ReadingCard
                     key={reading.id}
@@ -38,7 +38,7 @@ const Readings = () => {
                     image={reading.image_url}                // Pass the image_url to the ReadingCard
                     country={reading.country}
                     title={reading.title}
-                    description={reading.description}
+                    //description={reading.description}
                     text={reading.text}
                     onFavorite={addToFavorites}             // Pass the addToFavorites function to the ReadingCard
                 />

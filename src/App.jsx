@@ -19,6 +19,7 @@ const App = () => {
               <Route path="/readings" element={<Readings />} />
               <Route path="/reading/:id" element={<ReadingText />} />
               <Route path="/favorited" element={<Favorites />} />
+          
           </Routes>
       <AppFooter />
     </Router>
