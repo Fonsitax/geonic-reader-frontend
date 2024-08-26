@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReadingById } from "../services/readings-service";
 import BionicConverter from "../components/bionic-converter.jsx";
-import Dropdown from "../components/converter-toggle.jsx";
 import RatingBar from "../components/rating-bar.jsx";
+import BionicReader from "../components/bionic-setting-menu.jsx";
 
 
 
@@ -29,26 +29,25 @@ const ReadingText = () => {
         
         <div className="container mx-auto p-4 bg-gray-100 rounded-2xl mt-2 hover:shadow-2xl">
 
-                <div className="flex justify-end"> <Dropdown /></div>
+                <div className="flex justify-end"> <BionicReader /></div>
             
                     <h1 className="text-3xl font-medium mb-4 mt-4 ml-14 text-indigo-900">{reading.title}</h1>
-                     <h2 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-indigo-800 mr-2 mb-4 mt-4 ml-14">{reading.country}</h2>
-                    <div className="text-indigo-800 text-lg mb-5 mt-4 ml-14 mr-14">
-                    <BionicConverter
-                    text={reading.description}
-                    numberOfBoldLetters={2}/>
-                </div>
-                <div className="text-indigo-800 text-lg mb-10 mt-4 ml-14 mr-14 text-justify">
-                    <BionicConverter
-                    text={reading.text}
-                   numberOfBoldLetters={2}/>
-                </div>
-                 
-            <div className="flex justify-center items-center mb-10"> <RatingBar /> </div>
-            <div className="flex justify-center items-center">
-           
-        </div>
+                        <h2 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-indigo-800 mr-2 mb-4 mt-4 ml-14">{reading.country}</h2>
+                            
+                            <div className="text-indigo-800 text-lg mb-5 mt-4 ml-14 mr-14">
+                                <BionicConverter
+                                    text={reading.description}
+                                    numberOfBoldLetters={2}/>
+                            </div>
 
+                            <div className="text-indigo-800 text-lg mb-10 mt-4 ml-14 mr-14 text-justify">
+                                 <BionicConverter
+                                text={reading.text}
+                                numberOfBoldLetters={2}/>
+                            </div>
+                 
+                <div className="flex justify-center items-center mb-10"> <RatingBar /> </div>
+                <div className="flex justify-center items-center"></div>
         </div>
     );
 }
