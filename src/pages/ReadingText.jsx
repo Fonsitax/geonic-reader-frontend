@@ -27,7 +27,7 @@ const ReadingText = () => {
 
     return (
         
-        <div className="container mx-auto p-4 bg-gray-100 rounded-2xl mt-2">
+        <div className="container mx-auto p-4 bg-gray-100 rounded-2xl mt-2 hover:shadow-2xl">
 
                 <div className="flex justify-end"> <Dropdown /></div>
             
@@ -43,11 +43,9 @@ const ReadingText = () => {
                     text={reading.text}
                    numberOfBoldLetters={2}/>
                 </div>
-         
-            
-            
+                 
             <div className="flex justify-center items-center mb-10"> <RatingBar /> </div>
-            <div className="flex justify-center items-center ">
+            <div className="flex justify-center items-center">
            
         </div>
 

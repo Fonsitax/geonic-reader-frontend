@@ -1,4 +1,7 @@
 import SearchBar from '../components/search-bar.jsx';
+import BionicReader from '../components/bionic-toggle.jsx';
+import React, { useState } from "react";
+
 
 const Home = () => {
     return (
@@ -9,6 +12,9 @@ const Home = () => {
                 <h1>
                     <SearchBar/>
                 </h1>
+                <div> 
+                    <BionicReader />
+                </div>
             </div>
         </div>
     );

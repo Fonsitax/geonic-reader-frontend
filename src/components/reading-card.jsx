@@ -37,7 +37,7 @@ const ReadingCard = ({ id, image, country, title, description, text, onFavorite,
 
     return (
         <div
-            className="max-w-sm bg-gray-100 border border-indigo-200 rounded-xl shadow-2xl dark:bg-indigo-950 dark:border-indigo-700 ">
+            className="max-w-sm bg-gray-100 border border-indigo-200 rounded-xl hover:shadow-2xl shadow-inner dark:bg-indigo-950 dark:border-indigo-700 ">
             <img className="w-full h-auto object-cover rounded-t-xl sm:w-80 md:w-96 lg:w-full" 
             src={image} 
             alt={null}
