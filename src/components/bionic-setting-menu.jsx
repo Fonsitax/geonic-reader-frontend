@@ -16,9 +16,15 @@ const BionicSettingMenu = ({ setNumberOfBoldLetters }) => {
     return (
         <div>
             <div>
-                <button onClick={() => handleButtonClick(0)}>No Bold</button>
-                <button onClick={() => handleButtonClick(1)}>Bold First Letter</button>
-                <button onClick={() => handleButtonClick(3)}>Bold First 3 Letters</button>
+                <button 
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                onClick={() => handleButtonClick(0)}>Default</button>
+                <button 
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                onClick={() => handleButtonClick(2)}>Bold First 2 Letters</button>
+                <button 
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                onClick={() => handleButtonClick(3)}>Bold First 3 Letters</button>
             </div>
             {/*<div>*/}
             {/*    <BionicConverter*/}
