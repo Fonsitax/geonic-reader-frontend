@@ -43,7 +43,8 @@ const ReadingText = () => {
 
     return (
 
-        <div className={`${themeColorClass} container mx-auto p-4  rounded-2xl mt-2 hover:shadow-2xl`}>
+        <div
+            className={`${themeColorClass} ${textColorClass} container mx-auto p-4  rounded-2xl mt-2 hover:shadow-2xl w-[800px]`}>
             <div className="flex ml-10"><DrawerComponent reading={reading}/></div>
             <div className="flex ml-10">
                 <RightDrawer
@@ -53,20 +54,20 @@ const ReadingText = () => {
                 />
             </div>
 
-            <h1 className={`${textColorClass} text-3xl font-medium mb-4 mt-4 ml-14 `}>
+            <h1 className={` text-3xl font-medium mb-4 mt-4 ml-14 `}>
                 {reading.title}
             </h1>
-            <h2 className={`${textColorClass} inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-4 mt-4 ml-14`}>
+            <h2 className={` inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-4 mt-4 ml-14`}>
                 {reading.country}
             </h2>
 
-            <div className={`${textColorClass} text-lg  mb-5 mt-4 ml-14 mr-14 text-justify`}>
+            <div className={`text-lg  mb-5 mt-4 ml-14 mr-14 text-justify`}>
                 <BionicConverter
                     text={reading.description}
                     numberOfBoldLetters={numberOfBoldLetters}/>
             </div>
 
-            <div className={`${textColorClass} text-lg  mb-5 mt-4 ml-14 mr-14 text-justify`}>
+            <div className={` text-lg  mb-5 mt-4 ml-14 mr-14 text-justify`}>
                 <BionicConverter
                     text={reading.text}
                     numberOfBoldLetters={numberOfBoldLetters}/>

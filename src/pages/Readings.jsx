@@ -1,18 +1,26 @@
 import React, { useEffect } from "react";
-import { getAllReadings } from "../services/readings-service";
+import { getAllReadings, getReadingByCountry } from "../services/readings-service";
 import ReadingCard from "../components/reading-card.jsx";
+import { useParams } from "react-router-dom";
 
 const Readings = () => {
     const [readings, setReadings] = React.useState([]);
+    const { search } = useParams();
 
     useEffect(() => {
         const fetchReadings = async () => {
-            const readings = await getAllReadings();
+            let readings;
+            if (search !== undefined) {
+                readings = await getReadingByCountry(search);
+
+            } else {
+                readings = await getAllReadings();
+            }
             setReadings(readings);
         };
 
         fetchReadings();
-    }, []);
+    }, [search]);
 
 
     const addToFavorites = (id) => {
@@ -28,6 +36,12 @@ const Readings = () => {
             alert(`${reading.title} is already in your favorites!`);
         }
     };
+
+    if (readings.length === 0) {
+        return (
+            <div>No Readings found!</div>
+        )
+    }
 
     return (
         <div
