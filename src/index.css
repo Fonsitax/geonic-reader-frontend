@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 
-
 /* Global styles */
 body {
-  @apply bg-indigo-200 m-0 p-0 font-sans;
+    @apply bg-indigo-100 m-0 p-0 font-sans;
 }
+
+

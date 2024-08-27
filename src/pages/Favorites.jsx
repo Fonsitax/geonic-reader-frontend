@@ -24,9 +24,8 @@ const Favorites = () => {
                         image={reading.image_url}
                         country={reading.country}
                         title={reading.title}
-                        //description={reading.description}
-                        text={reading.text}
                         onRemoveFavorite={handleRemoveReading}
+                        hideButtons={false}
                     />
                 ))
             ) : (
