@@ -29,7 +29,14 @@ const Favorites = () => {
                     />
                 ))
             ) : (
-                <p>No favorites added yet.</p>
+                
+                
+                <div>
+                    <p>
+                         No favorites added yet.
+                    </p>
+                </div>
+
             )}
         </div>
     );

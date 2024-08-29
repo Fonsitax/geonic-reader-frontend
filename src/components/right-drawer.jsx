@@ -11,38 +11,25 @@ const RightDrawer = ({ handleChangeBoldLetter, handleChangeTextColor, handleChan
     return (
         <div>
             {/* Button to trigger drawer */}
-            <div className="text-center">
-                <button
-                    className="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
+            <div>
+                <button 
+                    className="text-gray-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-2 py-2 mb-2"
                     type="button"
                     onClick={toggleDrawer}
-                >
-                    Show right drawer
+            >
+                    <svg className="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                         <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4"/>
+                     </svg>
                 </button>
             </div>
 
             {/* Drawer component */}
             <div
-                className={`fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-gray-50 w-80 ${
+                className={`fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-gray-50 w-100 ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
-                <h5
-                    id="drawer-right-label"
-                    className="inline-flex items-center mb-4 text-base font-semibold text-gray-700"
-                >
-                    <svg
-                        className="w-4 h-4 me-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                    >
-                        <path
-                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-                    </svg>
-                    Customization
-                </h5>
+
                 <button
                     type="button"
                     onClick={toggleDrawer}
@@ -65,6 +52,7 @@ const RightDrawer = ({ handleChangeBoldLetter, handleChangeTextColor, handleChan
                     </svg>
                     <span className="sr-only">Close menu</span>
                 </button>
+
                 <BionicSettingMenu
                     handleChangeBoldLetter={handleChangeBoldLetter}
                     handleChangeTextColor={handleChangeTextColor}

@@ -10,14 +10,14 @@ function DrawerComponent({ reading }) {
     };
 
     return (
-        <div className="text-center">
+        <div >
             {/* Button to show the drawer */}
             <button
-                className=" hover:bg-indigo-800 text-gray-500 focus:ring-4 focus:ring-indigo-300 font-medium rounded-full px-5 py-2.5 mb-1 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800"
+                className=" hover:bg-indigo-100 text-gray-50 focus:ring-4 focus:ring-indigo-300 font-medium rounded-full dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800"
                 type="button"
                 onClick={toggleDrawer}
             >
-                <svg className="w-6 h-6 text-gray-300 dark:text-white" aria-hidden="true"
+                <svg className="w-6 h-6 text-gray-500 dark:text-white" aria-hidden="true"
                      xmlns="http://www.w3.org/2000/svg"
                      width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" strokeLinecap="round" strokeWidth="2"
@@ -34,23 +34,6 @@ function DrawerComponent({ reading }) {
                 tabIndex="-1"
                 aria-labelledby="drawer-left-label"
             >
-
-                <h5
-                    id="drawer-left-label"
-                    className="inline-flex items-center mb-4 text-lg font-semibold text-gray-500 dark:text-gray-400"
-                >
-                    <svg
-                        className="w-4 h-4 mr-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                    >
-                        <path
-                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-                    </svg>
-
-                </h5>
 
                 <button
                     type="button"
@@ -76,8 +59,8 @@ function DrawerComponent({ reading }) {
                     <span className="sr-only">Close menu</span>
                 </button>
 
-                <p className="mb-6 mt-14 text-lg text-gray-500 dark:text-gray-400">
-                    You are reading about:
+                <p className=" inline-flexflex items-center text-center mb-6 mt-14 text-lg text-gray-600 dark:text-gray-400">
+                    Your Pick:
                     <a
                         href="#"
                         className="text-indigo-600 underline font-medium dark:text-indigo-500 hover:no-underline"
@@ -101,14 +84,14 @@ function DrawerComponent({ reading }) {
                         href="#"
                         className="px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                     >
-                        Learn more
+                        Home
                     </a>
 
                     <a
                         href="#"
                         className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800"
                     >
-                        {/* Get Access */}
+                        {/* arrow */}
                         <svg
                             className="rtl:rotate-180 w-3.5 h-3.5 ml-2"
                             aria-hidden="true"

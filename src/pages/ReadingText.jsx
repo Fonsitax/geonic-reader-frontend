@@ -42,39 +42,51 @@ const ReadingText = () => {
     }
 
     return (
+  
+        <div className={`${themeColorClass} ${textColorClass} container mx-auto p-4 rounded-2xl mt-2 max-w-screen-lg`}>
+          
+            <div className="flex flex-col md:flex-row">    
+                <div>
+                    
+                    <RightDrawer
+                        handleChangeBoldLetter={handleChangeBoldLetter}
+                        handleChangeTextColor={handleChangeTextColor}
+                        handleChangeThemeColor={handleChangeThemeColor}
+                    />
+                </div>
+            </div>
 
-        <div
-            className={`${themeColorClass} ${textColorClass} container mx-auto p-4  rounded-2xl mt-2 hover:shadow-2xl w-[800px]`}>
-            <div className="flex ml-10"><DrawerComponent reading={reading}/></div>
-            <div className="flex ml-10">
-                <RightDrawer
-                    handleChangeBoldLetter={handleChangeBoldLetter}
-                    handleChangeTextColor={handleChangeTextColor}
-                    handleChangeThemeColor={handleChangeThemeColor}
+
+            <div className="ml-10">
+                <h1 className="text-3xl font-medium mb-4 mt-4 text-center md:text-left">
+                    {reading.title}
+                </h1>
+
+
+                <h2 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mb-4 md:text-left">
+                    {reading.country}
+                </h2>
+                
+                <div className="md:w-1/4 p-4">
+                    <DrawerComponent reading={reading} />
+                </div>
+            </div>
+
+            
+
+            <div className="text-lg leading-loose mb-5 mt-4 mx-auto sm:mx-14 text-left">
+                <BionicConverter
+                    text={reading.description}
+                    numberOfBoldLetters={numberOfBoldLetters}
                 />
             </div>
 
-            <h1 className={` text-3xl font-medium mb-4 mt-4 ml-14 `}>
-                {reading.title}
-            </h1>
-            <h2 className={` inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-4 mt-4 ml-14`}>
-                {reading.country}
-            </h2>
-
-            <div className={`text-lg  mb-5 mt-4 ml-14 mr-14 text-justify`}>
-                <BionicConverter
-                    text={reading.description}
-                    numberOfBoldLetters={numberOfBoldLetters}/>
-            </div>
-
-            <div className={` text-lg  mb-5 mt-4 ml-14 mr-14 text-justify`}>
+            <div className="text-lg leading-loose mb-5 mt-4 mx-auto sm:mx-14 text-left">
                 <BionicConverter
                     text={reading.text}
-                    numberOfBoldLetters={numberOfBoldLetters}/>
+                    numberOfBoldLetters={numberOfBoldLetters}
+                />
             </div>
-
-
-            <div className="flex justify-center items-center"></div>
         </div>
     );
 }
