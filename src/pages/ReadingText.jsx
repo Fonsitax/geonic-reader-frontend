@@ -44,10 +44,12 @@ const ReadingText = () => {
     return (
   
         <div className={`${themeColorClass} ${textColorClass} container mx-auto p-4 rounded-2xl mt-2 max-w-screen-lg`}>
-          
-            <div className="flex flex-col md:flex-row">    
+         
+            <div className="flex flex-col md:flex-row justify-end items-start md:ml-auto">    
                 <div>
-                    
+                    <DrawerComponent reading={reading} />
+                </div>
+                <div>
                     <RightDrawer
                         handleChangeBoldLetter={handleChangeBoldLetter}
                         handleChangeTextColor={handleChangeTextColor}
@@ -57,19 +59,13 @@ const ReadingText = () => {
             </div>
 
 
-            <div className="ml-10">
-                <h1 className="text-3xl font-medium mb-4 mt-4 text-center md:text-left">
+            <div className="text-lg leading-loose mx-auto sm:mx-14 text-left mt-10">
+                <h1 className="text-3xl font-medium">
                     {reading.title}
                 </h1>
-
-
-                <h2 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mb-4 md:text-left">
+                <h2 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mt-5">
                     {reading.country}
-                </h2>
-                
-                <div className="md:w-1/4 p-4">
-                    <DrawerComponent reading={reading} />
-                </div>
+                </h2>             
             </div>
 
             
@@ -81,7 +77,7 @@ const ReadingText = () => {
                 />
             </div>
 
-            <div className="text-lg leading-loose mb-5 mt-4 mx-auto sm:mx-14 text-left">
+            <div className="text-lg leading-loose mx-auto sm:mx-14 text-left mb-24">
                 <BionicConverter
                     text={reading.text}
                     numberOfBoldLetters={numberOfBoldLetters}

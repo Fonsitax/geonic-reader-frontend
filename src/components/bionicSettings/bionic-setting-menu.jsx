@@ -5,7 +5,7 @@ import ThemeSetting from "./theme-setting.jsx";
 const BionicSettingMenu = ({ handleChangeBoldLetter, handleChangeTextColor, handleChangeThemeColor }) => {
     return (
         <div className="mt-20">
-            <h1 className="mb-4 text-center text-sm">Customization</h1>
+            <h1 className="mb-4 text-center text-sm font-semibold">Customization</h1>
             <div className="p-8 border-2 mb-2">
                 <BoldLetterSetting handleChangeBoldLetter={handleChangeBoldLetter}></BoldLetterSetting>
             </div>

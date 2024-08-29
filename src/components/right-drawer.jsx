@@ -11,9 +11,9 @@ const RightDrawer = ({ handleChangeBoldLetter, handleChangeTextColor, handleChan
     return (
         <div>
             {/* Button to trigger drawer */}
-            <div>
+            <div >
                 <button 
-                    className="text-gray-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-2 py-2 mb-2"
+                    className= "text-gray-800  hover:bg-indigo-100 focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-2 py-2 mb-2"
                     type="button"
                     onClick={toggleDrawer}
             >
