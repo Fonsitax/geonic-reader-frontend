@@ -1,12 +1,23 @@
+import React from "react";
+import HeroSection from "../components/homePage/hero-section";
+
 const Home = () => {
 
 
     return (
-        <div className="p-6">
-            <h2 className="text-xl font-semibold">Home Component</h2>
-            <p>Welcome to the Home page!</p>
+        <div>
+
+            <div className="border-slate-400 p-6 ">
+                <div>
+                    <HeroSection />
+                </div>
+            </div>
+           
 
         </div>
+
+
+
     );
 
 };

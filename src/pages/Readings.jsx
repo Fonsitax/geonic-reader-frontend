@@ -73,7 +73,7 @@ const Readings = () => {
 
     return (
         <div>
-            <div>
+            <div className="mb-10">
                 <h1>
                     <SearchBar onSearch={handleSearch}/>
                 </h1>
