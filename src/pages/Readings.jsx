@@ -47,8 +47,8 @@ const Readings = () => {
     }
     if (readings.length === 0) {
         return (
-            <div className="flex items-center justify-center min-h-screen  dark:bg-gray-800 dark:border-gray-700">
-                <div>
+            <div className="flex items-center justify-center min-h-screen dark:bg-gray-800 dark:border-gray-700 ">
+                <div >
                     <h1>
                         <SearchBar onSearch={handleSearch}/>
                     </h1>
@@ -73,7 +73,7 @@ const Readings = () => {
 
     return (
         <div>
-            <div className="mb-10">
+            <div className="mb-20 mt-44">
                 <h1>
                     <SearchBar onSearch={handleSearch}/>
                 </h1>

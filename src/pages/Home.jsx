@@ -1,5 +1,8 @@
-import React from "react";
+import React from 'react';
 import HeroSection from "../components/homePage/hero-section";
+import FAQSection from '../components/homePage/question-ask-section';
+import About from "../components/homePage/about-us-section";
+
 
 const Home = () => {
 
@@ -7,17 +10,16 @@ const Home = () => {
     return (
         <div>
 
-            <div className="border-slate-400 p-6 ">
+            
                 <div>
                     <HeroSection />
+                </div>    
+            
+               
+                <div>
+                    <FAQSection />
                 </div>
-            </div>
-           
-
         </div>
-
-
-
     );
 
 };

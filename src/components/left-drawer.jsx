@@ -28,7 +28,7 @@ function DrawerComponent({ reading }) {
 
             {/* Drawer component */}
             <div
-    className={`fixed top-0 left-0 z-40 h-full p-4 md:p-10 overflow-y-auto transition-transform ${
+    className={` mt-28 fixed top-0 left-0 z-40 h-full p-4 md:p-10 overflow-y-auto transition-transform ${
         isOpen ? "translate-x-0" : "-translate-x-full"
     } bg-white w-full md:w-80 dark:bg-gray-800`}
     tabIndex="-1"

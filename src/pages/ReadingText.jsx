@@ -43,9 +43,9 @@ const ReadingText = () => {
 
     return (
   
-        <div className={`${themeColorClass} ${textColorClass} container mx-auto p-4 rounded-2xl mt-2 max-w-screen-lg`}>
+        <div className={`${themeColorClass} ${textColorClass} mt-48 container mx-auto p-4 rounded-2xl max-w-screen-lg`}>
          
-            <div className="flex flex-col md:flex-row justify-end items-start md:ml-auto">    
+            <div className="flex flex-col md:flex-row justify-end items-start md:ml-auto m">    
                 <div>
                     <DrawerComponent reading={reading} />
                 </div>
@@ -59,18 +59,18 @@ const ReadingText = () => {
             </div>
 
 
-            <div className="text-lg leading-loose mx-auto sm:mx-14 text-left mt-10">
+            <div className="text-lg leading-loose mx-auto sm:mx-14 text-left mt-20">
                 <h1 className="text-3xl font-medium">
                     {reading.title}
                 </h1>
-                <h2 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mt-5">
+                <h2 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold mt-8">
                     {reading.country}
                 </h2>             
             </div>
 
             
 
-            <div className="text-lg leading-loose mb-5 mt-4 mx-auto sm:mx-14 text-left">
+            <div className="text-lg leading-loose mb-5 mt-10 mx-auto sm:mx-14 text-left">
                 <BionicConverter
                     text={reading.description}
                     numberOfBoldLetters={numberOfBoldLetters}

@@ -25,7 +25,7 @@ const RightDrawer = ({ handleChangeBoldLetter, handleChangeTextColor, handleChan
 
             {/* Drawer component */}
             <div
-                className={`fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform bg-gray-50 w-100 ${
+                className={`fixed top-0 right-0 z-40 h-screen p-4 mt-28 overflow-y-auto transition-transform bg-gray-50 w-100 ${
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >

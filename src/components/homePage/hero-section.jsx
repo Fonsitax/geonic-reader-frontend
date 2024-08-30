@@ -2,18 +2,18 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className='mb-44'>
-      <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+    <section>
+      <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56 mb-52 mt-48">
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-indigo-900 md:text-5xl lg:text-6xl">
         Explore the World with Geonic Reader
         </h1>
-        <p className="mb-8 text-lg font-normal text-indigo-800 lg:text-xl sm:px-16 lg:px-48">
+        <p className=" mb-10 text-lg font-normal text-indigo-800 lg:text-xl sm:px-16 lg:px-48">
         <p><strong>Unlo</strong>ck fascinating <strong>geo</strong>graphy facts from every <strong>cor</strong>ner of the globe. <strong>Di</strong>ve into interactive cards and <strong>disc</strong>over new <strong>ins</strong>ights with each click. <strong>Enh</strong>ance your learning with our <strong>Bion</strong>ic Reading method, <strong>desig</strong>ned to help you <strong>gras</strong>p and <strong>reme</strong>mber information <strong>faste</strong>r and more <strong>effic</strong>iently.</p>
         </p>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
           <a
             href="#"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 dark:focus:ring-indigo-900"
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-indigo-800 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 dark:focus:ring-indigo-900"
           >
             Get started
             <svg
@@ -34,7 +34,7 @@ const HeroSection = () => {
           </a>
           <a
             href="#"
-            className="inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-indigo-700 rounded-lg border border-indigo-700 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-gray-400"
+            className="inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-indigo-800 rounded-lg border border-indigo-800 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-indigo-400"
           >
             Learn more
           </a>
