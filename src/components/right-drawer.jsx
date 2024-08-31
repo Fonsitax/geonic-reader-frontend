@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import BionicSettingMenu from "./bionicSettings/bionic-setting-menu.jsx";
 
-const RightDrawer = ({ handleChangeBoldLetter, handleChangeTextColor, handleChangeThemeColor }) => {
-    const [isOpen, setIsOpen] = useState(false);
+const RightDrawer = ({
+                         handleChangeBoldLetter,
+                         handleChangeTextColor,
+                         handleChangeThemeColor,
+                         handleChangeFontSize
+                     }) => {
+    const [isOpen, setIsOpen] = React.useState(false);
 
     const toggleDrawer = () => {
         setIsOpen(!isOpen);
@@ -11,15 +16,17 @@ const RightDrawer = ({ handleChangeBoldLetter, handleChangeTextColor, handleChan
     return (
         <div>
             {/* Button to trigger drawer */}
-            <div >
-                <button 
-                    className= "text-gray-800  hover:bg-indigo-100 focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-2 py-2 mb-2"
+            <div>
+                <button
+                    className="text-gray-800  hover:bg-indigo-100 focus:ring-4 focus:ring-indigo-300 font-medium rounded-full text-sm px-2 py-2 mb-2"
                     type="button"
                     onClick={toggleDrawer}
-            >
-                    <svg className="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                         <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4"/>
-                     </svg>
+                >
+                    <svg className="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                         width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" strokeLinecap="round" strokeWidth="2"
+                              d="M20 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6h-2m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4m16 6H10m0 0a2 2 0 1 0-4 0m4 0a2 2 0 1 1-4 0m0 0H4"/>
+                    </svg>
                 </button>
             </div>
 
@@ -57,6 +64,7 @@ const RightDrawer = ({ handleChangeBoldLetter, handleChangeTextColor, handleChan
                     handleChangeBoldLetter={handleChangeBoldLetter}
                     handleChangeTextColor={handleChangeTextColor}
                     handleChangeThemeColor={handleChangeThemeColor}
+                    handleChangeFontSize={handleChangeFontSize}
                 ></BionicSettingMenu>
 
 
