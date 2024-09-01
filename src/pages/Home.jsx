@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroSection from "../components/homePage/hero-section";
 import FAQSection from '../components/homePage/question-ask-section';
-import About from "../components/homePage/about-us-section";
+import Carousel from '../components/homePage/carousel';
 
 
 const Home = () => {
@@ -14,11 +14,14 @@ const Home = () => {
                 <div>
                     <HeroSection />
                 </div>    
-            
-               
+                <div>
+                    <Carousel />
+                </div>
+       
                 <div>
                     <FAQSection />
                 </div>
+                
         </div>
     );
 
