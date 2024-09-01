@@ -6,18 +6,28 @@ import SearchBar from "../components/search-bar.jsx";
 
 const Readings = () => {
     const [readings, setReadings] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState(null);
+    const [showAlert, setShowAlert] = React.useState(false);
+    const [alertMessage, setAlertMessage] = React.useState('');
+    const [alertType, setAlertType] = React.useState('info'); // info, success, error
     const { search } = useParams();
     const navigate = useNavigate();
 
     React.useEffect(() => {
         const fetchReadings = async () => {
-            let readings;
-            if (search !== undefined) {
-                readings = await getReadingByCountry(search);
-            } else {
-                readings = await getAllReadings();
+            setLoading(true);
+            setError(null);
+            try {
+                const fetchedReadings = search !== undefined
+                    ? await getReadingByCountry(search)
+                    : await getAllReadings();
+                setReadings(fetchedReadings);
+            } catch (err) {
+                setError("Failed to load readings.");
+            } finally {
+                setLoading(false);
             }
-            setReadings(readings);
         };
 
         fetchReadings();
@@ -33,17 +43,51 @@ const Readings = () => {
         const favoriteReadings = JSON.parse(localStorage.getItem('favoriteReadings')) || [];
         const reading = readings.find(r => r.id === id);
 
-        if (reading && !favoriteReadings.some(fav => fav.id === id)) {
-            favoriteReadings.push(reading);
-            localStorage.setItem('favoriteReadings', JSON.stringify(favoriteReadings));
-            alert(`${reading.title} has been added to your favorites!`);
-        } else {
-            alert(`${reading.title} is already in your favorites!`);
+        if (reading) {
+            const isAlreadyFavorite = favoriteReadings.some(fav => fav.id === id);
+            if (!isAlreadyFavorite) {
+                favoriteReadings.push(reading);
+                localStorage.setItem('favoriteReadings', JSON.stringify(favoriteReadings));
+                setAlertMessage(`${reading.title} has been added to your favorites!`);
+                setAlertType('success');
+                setShowAlert(true);
+                // Hide the alert after 1 second
+                setTimeout(() => setShowAlert(false), 1000);
+            } else {
+                setAlertMessage(`${reading.title} is already in your favorites!`);
+                setAlertType('info');
+                setShowAlert(true);
+                // Hide the alert after 1 second
+                setTimeout(() => setShowAlert(false), 1000);
+            }
         }
     };
 
-    // Loading icon when no reading is found
-    if (readings.length === 0) {
+    const removeFromFavorites = (id) => {
+        console.log('Remove from favorites:', id);
+        const favoriteReadings = JSON.parse(localStorage.getItem('favoriteReadings')) || [];
+        const newFavorites = favoriteReadings.filter((reading) => reading.id !== id);
+        localStorage.setItem('favoriteReadings', JSON.stringify(newFavorites));
+        
+        const removedReading = readings.find(r => r.id === id);
+        if (removedReading) {
+            setAlertMessage(`${removedReading.title} has been removed from your favorites!`);
+            setAlertType('error');
+            setShowAlert(true);
+            // Hide the alert after 1 second
+            setTimeout(() => setShowAlert(false), 1000);
+        }
+    };
+
+    React.useEffect(() => {
+        // Hide the alert automatically if it's shown
+        if (showAlert) {
+            const timer = setTimeout(() => setShowAlert(false), 1000);
+            return () => clearTimeout(timer);
+        }
+    }, [showAlert]);
+
+    if (loading) {
         return (
             <div className="flex items-center justify-center min-h-screen dark:bg-gray-800 dark:border-gray-700">
                 <div>
@@ -66,31 +110,67 @@ const Readings = () => {
         );
     }
 
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     return (
         <div>
+            {/* Alert Message */}
+            {showAlert && (
+                <div
+                    className="fixed inset-0 flex items-center justify-center z-50"
+                    role="alert"
+                >
+                    <div
+                        className={`max-w-lg w-full p-6 text-white border rounded-lg shadow-lg ${alertType === 'success' ? 'bg-green-500 border-green-600' : alertType === 'error' ? 'bg-red-500 border-red-600' : 'bg-blue-500 border-blue-600'}`}
+                    >
+                        <div className="flex items-start space-x-4">
+                            <svg
+                                className={`w-8 h-8 ${alertType === 'success' ? 'text-green-200' : alertType === 'error' ? 'text-red-200' : 'text-blue-200'}`}
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path d={alertType === 'success'
+                                    ? "M10 1.5a8.5 8.5 0 1 0 8.5 8.5A8.51 8.51 0 0 0 10 1.5ZM8.293 6.293a1 1 0 0 1 1.414 0L10 6.586l.293-.293a1 1 0 0 1 1.414 1.414L10 9.414l-2.707-2.707a1 1 0 0 1 0-1.414ZM10 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                                    : alertType === 'error'
+                                    ? "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                                    : "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                                }/>
+                            </svg>
+                            <div>
+                                <span className="font-medium">
+                                    {alertType === 'success' ? 'Success!' : alertType === 'error' ? 'Error!' : 'Info!'}
+                                </span> {alertMessage}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className="mb-28 mt-44">
-                <h1>
-                    <SearchBar onSearch={handleSearch} />
-                </h1>
+                <SearchBar onSearch={handleSearch} />
             </div>
 
             <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
-                {readings.map((reading) => (
-                    <ReadingCard
-                        key={reading.id}
-                        id={reading.id}
-                        image={reading.image_url}
-                        country={reading.country}
-                        title={reading.title}
-                        onFavorite={addToFavorites}
-                        hideButtons={false}
-                    />
-                ))}
-            </div>
-            <div className="mb-28 mt-44">
-                <h1>
-                    <SearchBar onSearch={handleSearch} />
-                </h1>
+                {readings.length > 0 ? (
+                    readings.map((reading) => (
+                        <ReadingCard
+                            key={reading.id}
+                            id={reading.id}
+                            image={reading.image_url}
+                            country={reading.country}
+                            title={reading.title}
+                            onFavorite={addToFavorites}
+                            onRemoveFavorite={removeFromFavorites}
+                            hideButtons={false}
+                        />
+                    ))
+                ) : (
+                    <div>No readings found</div>
+                )}
             </div>
         </div>
     );
