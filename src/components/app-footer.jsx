@@ -9,7 +9,7 @@ const AppFooter = () => {
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center space-y-4">
                     <p className="text-center text-gray-700 text-sm">
-                        &copy; 2024 Geonic Reader App
+                        &copy; 2024 Geonic Reader° App
                     </p>
                     <div className="flex space-x-4">
                         {/* Placeholder links */}

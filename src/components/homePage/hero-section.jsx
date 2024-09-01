@@ -9,7 +9,7 @@ const HeroSection = () => {
           {/* Text Content */}
           <div className="lg:w-1/2">
             <h1 className="mb-6 text-4xl font-extrabold tracking-tight leading-none text-indigo-900 md:text-5xl lg:text-6xl relative group">
-              <span className="relative z-10">Explore the World with Geonic Reader</span>
+              <span className="relative z-10">Explore the World with Geonic Reader°</span>
               <span className="absolute bottom-[-8px] left-0 w-full h-[2px] bg-indigo-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </h1>
             <p className="mb-10 text-lg font-normal text-indigo-800 lg:text-xl sm:px-16 lg:px-0">
