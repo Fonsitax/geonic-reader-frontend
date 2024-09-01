@@ -52,7 +52,7 @@ const ReadingText = () => {
     }
 
     return (
-        <div className={`${themeColorClass} ${textColorClass} mt-48 border-2 border-indigo-900 container mx-auto p-4 rounded-2xl max-w-screen-lg`}>
+        <div className={`${themeColorClass} ${textColorClass} mt-48 mb-20 border-2 border-indigo-900 container mx-auto p-4 rounded-2xl max-w-screen-lg`}>
             <div className="flex flex-col md:flex-row justify-end items-start md:ml-auto">
                 <DrawerComponent reading={reading}/>
                 <RightDrawer

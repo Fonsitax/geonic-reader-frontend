@@ -62,6 +62,7 @@ const AppHeader = () => {
                             {/* Stylish Underline Effect for Menu Item */}
                             <span className="absolute bottom-[-5px] left-0 w-full h-[2px] bg-gradient-to-r from-indigo-700 via-indigo-500 to-indigo-700 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
                         </li>
+                        
                     </ul>
                 </nav>
             </div>

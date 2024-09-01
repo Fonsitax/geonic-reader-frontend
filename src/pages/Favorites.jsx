@@ -73,7 +73,7 @@ const Favorites = () => {
             )}
 
             {/* Main Content */}
-            <main className="flex-grow mt-48">
+            <main className="flex-grow mt-48 mb-20">
                 {/* Quote Section */}
                 <div className="max-w-4xl mx-auto text-center mb-10">
                     <figure>
