@@ -1,6 +1,8 @@
 import React from "react";
 
 const TextColorSetting = ({ handleChangeTextColor }) => {
+    const [selectedButtton, setSelectedButtton] = React.useState(0);
+
     const buttons = [
         {
             gradient: 'from-blue-900 via-blue-900 to-blue-900',
@@ -44,7 +46,8 @@ const TextColorSetting = ({ handleChangeTextColor }) => {
         },
     ];
 
-    const handleOnClick = (textColorClass) => {
+    const handleOnClick = (textColorClass, index) => {
+        setSelectedButtton(index);
         handleChangeTextColor(textColorClass);
     }
 
@@ -56,8 +59,8 @@ const TextColorSetting = ({ handleChangeTextColor }) => {
                 <button
                     key={index}
                     type="button"
-                    className={` w-10 h-10 rounded-full bg-gradient-to-r ${button.gradient} hover:bg-gradient-to-br focus:ring-4 focus:outline-none ${button.ring} font-medium text-sm px-5 py-2.5 text-center me-2 mb-2`}
-                    onClick={() => handleOnClick(button.textColorClass)}
+                    className={` w-10 h-10 rounded-full bg-gradient-to-r ${button.gradient} hover:bg-gradient-to-br focus:ring-4 focus:outline-none ${button.ring} font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 ${index === selectedButtton ? 'ring-4' : ''}`}
+                    onClick={() => handleOnClick(button.textColorClass, index)}
                 >
                 </button>
             ))}

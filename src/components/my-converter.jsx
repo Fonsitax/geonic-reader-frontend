@@ -1,12 +1,10 @@
 import React from 'react';
-import AppHeader from './app-header.jsx'; 
-import BionicConverter from './bionic-converter.jsx'; 
+import BionicConverter from './bionic-converter.jsx';
 import BoldLetterSetting from './bionicSettings/bold-letter-setting.jsx';
-import { useState } from 'react';
 
 const MyConverter = () => {
-    const [userInput, setUserInput] = useState('');
-    const [numberOfBoldLetters, setNumberOfBoldLetters] = useState(2); // Default number of bold letters
+    const [userInput, setUserInput] = React.useState('');
+    const [numberOfBoldLetters, setNumberOfBoldLetters] = React.useState(2); // Default number of bold letters
 
     const handleInputChange = (e) => {
         setUserInput(e.target.value);
@@ -43,14 +41,17 @@ const MyConverter = () => {
                             id="bionic-text"
                             className="flex-1 p-3 border border-gray-300 rounded-lg shadow-sm bg-gray-50 text-gray-900"
                         >
-                            <BionicConverter text={userInput} numberOfBoldLetters={numberOfBoldLetters} />
+                            <BionicConverter text={userInput} numberOfBoldLetters={numberOfBoldLetters}/>
                         </div>
                     </div>
                 </div>
 
                 {/* Bionic Setting Menu */}
                 <div className="mt-10">
-                    <BoldLetterSetting handleChangeBoldLetter={handleBoldLetterChange} />
+                    <BoldLetterSetting
+                        handleChangeBoldLetter={handleBoldLetterChange}
+                        preSelection={numberOfBoldLetters}
+                    />
                 </div>
             </main>
         </div>
