@@ -1,7 +1,10 @@
 import React from "react";
 
 const ThemeSetting = ({ handleChangeThemeColor }) => {
-    const handleOnClick = (themeColor) => {
+    const [selectedButtton, setSelectedButtton] = React.useState(0);
+
+    const handleOnClick = (themeColor, index) => {
+        setSelectedButtton(index);
         handleChangeThemeColor(themeColor);
     }
 
@@ -16,14 +19,14 @@ const ThemeSetting = ({ handleChangeThemeColor }) => {
     ];
 
     return (
-        <div >
+        <div>
             <h1 className="text-center text-sm font-medium mb-4">Paper Color</h1>
             <div className=" border-black rounded-l flex space-x-4 justify-center ">
                 {buttons.map((btn, index) => (
                         <button
                             key={index}
-                            className={`${btn.class} ${btn.hover} text-white font-bold py-2 px-4 rounded-full w-10 h-10 border-2`}
-                            onClick={() => handleOnClick(btn.class)}>
+                            className={`${btn.class} ${btn.hover} text-white font-bold py-2 px-4 rounded-full w-10 h-10 border-2 ${index === selectedButtton ? 'ring-4' : ''}`}
+                            onClick={() => handleOnClick(btn.class, index)}>
                         </button>
                     )
                 )}
