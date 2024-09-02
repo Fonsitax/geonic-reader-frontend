@@ -172,7 +172,7 @@ const Readings = () => {
                         />
                     ))
                 ) : (
-                    <div>No readings found</div>
+                    <div className=" mb-52 text-center col-span-full text-gray-500">No readings found</div>
                 )}
             </div>
         </div>
