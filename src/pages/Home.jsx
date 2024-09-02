@@ -6,26 +6,30 @@ import MyConverter from '../components/my-converter';
 
 
 const Home = () => {
-
-
     return (
-        <div>     
-                <div className='mt-36'>
-                    <HeroSection />
-                </div>    
-                <div>
-                    <Carousel />
+        <div>
+            <div className="mt-36">
+                <HeroSection />
+            </div>
+
+            {/* Diagonal Separator */}
+            <div className="relative -my-8">
+                <div className="relative h-16">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300 to-transparent transform skew-y-6 -translate-y-4"></div>
                 </div>
-       
-                <div>
-                    <FAQSection />
-                </div>
-                <div className='mt-36 mb-36'>
-                    <MyConverter />
-                </div>             
+            </div>
+
+            <div>
+                <Carousel />
+            </div>
+            <div>
+                <FAQSection />
+            </div>
+            <div>
+                <MyConverter />
+            </div>
         </div>
     );
-
 };
 
 export default Home;

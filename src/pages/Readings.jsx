@@ -38,27 +38,26 @@ const Readings = () => {
         navigate(path);
     };
 
+    const displayAlert = (message, type) => {
+        setAlertMessage(message);
+        setAlertType(type);
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000); 
+    };
+
     const addToFavorites = (id) => {
         console.log('Add to favorites:', id);
-        const favoriteReadings = JSON.parse(localStorage.getItem('favoriteReadings')) || [];                                //Retrive the favorite readings from local storage
-        const reading = readings.find(r => r.id === id);                                                                    //Find the reading by id
+        const favoriteReadings = JSON.parse(localStorage.getItem('favoriteReadings')) || []; // Retrieve the favorite readings from local storage
+        const reading = readings.find(r => r.id === id);                                    // Find the reading by id
 
-        if (reading) {                                                                                                       //If the reading is found                                                    
-            const isAlreadyFavorite = favoriteReadings.filter(fav => fav.id === id).length > 0;                              //filter the favorite readings to check if the reading is already in the favorites list
+        if (reading) { // If the reading is found
+            const isAlreadyFavorite = favoriteReadings.some(fav => fav.id === id); // Check if the reading is already in the favorites list
             if (!isAlreadyFavorite) {
                 favoriteReadings.push(reading);
                 localStorage.setItem('favoriteReadings', JSON.stringify(favoriteReadings));
-                setAlertMessage(`${reading.title} has been added to your favorites!`);
-                setAlertType('success');
-                setShowAlert(true);
-                // Hide the alert after 1 second
-                setTimeout(() => setShowAlert(false), 1000);
+                displayAlert(`${reading.title} has been added to your favorites!`, 'success');
             } else {
-                setAlertMessage(`${reading.title} is already in your favorites!`);
-                setAlertType('info');
-                setShowAlert(true);
-                // Hide the alert after 1 second
-                setTimeout(() => setShowAlert(false), 1000);
+                displayAlert(`${reading.title} is already in your favorites!`, 'info');
             }
         }
     };
@@ -69,20 +68,18 @@ const Readings = () => {
         const newFavorites = favoriteReadings.filter((reading) => reading.id !== id);
         localStorage.setItem('favoriteReadings', JSON.stringify(newFavorites));
         
-        const removedReading = readings.find(r => r.id === id);
-        if (removedReading) {
-            setAlertMessage(`${removedReading.title} has been removed from your favorites!`);
-            setAlertType('error');
-            setShowAlert(true);
-            // Hide the alert after 1 second
-            setTimeout(() => setShowAlert(false), 1000);
+        const removeReading = readings.find(r => r.id === id);
+        if (removeReading) {
+            setTimeout(() => {
+                displayAlert(`${removeReading.title} has been removed from your favorites!`, 'error');
+            }, 0);                                              // 0 ms delay allows the state to update before showing the alert
         }
     };
 
     React.useEffect(() => {
         // Hide the alert automatically if it's shown
         if (showAlert) {
-            const timer = setTimeout(() => setShowAlert(false), 1000);
+            const timer = setTimeout(() => setShowAlert(false), 3000);
             return () => clearTimeout(timer);
         }
     }, [showAlert]);
@@ -156,7 +153,7 @@ const Readings = () => {
                 </div>
             )}
 
-            <div className=" mt-48">
+            <div className="mt-48">
                 <SearchBar onSearch={handleSearch} />
             </div>
 
@@ -180,6 +177,6 @@ const Readings = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Readings;

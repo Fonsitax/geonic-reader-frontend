@@ -18,7 +18,7 @@ const Favorites = () => {
 
     useEffect(() => {
         if (showAlert) {
-            const timer = setTimeout(() => setShowAlert(false), 1000);
+            const timer = setTimeout(() => setShowAlert(false), 3000);
             return () => clearTimeout(timer);
         }
     }, [showAlert]);
@@ -29,9 +29,12 @@ const Favorites = () => {
             const newFavorites = favorites.filter((reading) => reading.id !== id);
             setFavorites(newFavorites);
             localStorage.setItem('favoriteReadings', JSON.stringify(newFavorites));
-            setAlertMessage(`${readingToRemove.title} has been removed from your favorites.`);
-            setAlertType('error'); // Red color scheme for error
-            setShowAlert(true);
+            
+            setTimeout(() => {
+                setAlertMessage(`${readingToRemove.title} has been removed from your favorites.`);
+                setAlertType('error');
+                setShowAlert(true);  
+            }, 0);    
         }
     };
 
