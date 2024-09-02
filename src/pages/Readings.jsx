@@ -40,11 +40,11 @@ const Readings = () => {
 
     const addToFavorites = (id) => {
         console.log('Add to favorites:', id);
-        const favoriteReadings = JSON.parse(localStorage.getItem('favoriteReadings')) || [];
-        const reading = readings.find(r => r.id === id);
+        const favoriteReadings = JSON.parse(localStorage.getItem('favoriteReadings')) || [];                                //Retrive the favorite readings from local storage
+        const reading = readings.find(r => r.id === id);                                                                    //Find the reading by id
 
-        if (reading) {
-            const isAlreadyFavorite = favoriteReadings.some(fav => fav.id === id);
+        if (reading) {                                                                                                       //If the reading is found                                                    
+            const isAlreadyFavorite = favoriteReadings.filter(fav => fav.id === id).length > 0;                              //filter the favorite readings to check if the reading is already in the favorites list
             if (!isAlreadyFavorite) {
                 favoriteReadings.push(reading);
                 localStorage.setItem('favoriteReadings', JSON.stringify(favoriteReadings));
