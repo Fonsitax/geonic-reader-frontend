@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const HeroSection = () => {
   return (
     <section>
-      <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56 mb-52 mt-48">
+      <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
         <div className="flex flex-col items-center lg:flex-row lg:items-start lg:justify-between">
           {/* Text Content */}
           <div className="lg:w-1/2">

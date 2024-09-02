@@ -9,10 +9,8 @@ const Home = () => {
 
 
     return (
-        <div>
-
-            
-                <div>
+        <div>     
+                <div className='mt-36'>
                     <HeroSection />
                 </div>    
                 <div>
@@ -22,10 +20,9 @@ const Home = () => {
                 <div>
                     <FAQSection />
                 </div>
-                <div>
+                <div className='mt-36 mb-36'>
                     <MyConverter />
-                </div>
-                
+                </div>             
         </div>
     );
 

@@ -156,7 +156,7 @@ const Readings = () => {
                 </div>
             )}
 
-            <div className="mb-28 mt-44">
+            <div className=" mt-48">
                 <SearchBar onSearch={handleSearch} />
             </div>
 

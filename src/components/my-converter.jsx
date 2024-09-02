@@ -18,8 +18,7 @@ const MyConverter = () => {
 
     return (
         <div>
-            <AppHeader />
-            <main className="p-6 max-w-4xl mx-auto mt-16">
+            <main className="p-6 max-w-4xl mx-auto">
                 <div className="flex flex-col md:flex-row gap-6 mb-8">
                     {/* Text Input Field */}
                     <div className="flex-1 flex flex-col">
