@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
+  /*server: {
     proxy: {                                                    // Proxy-Server for the API
       '/api': {
         target: 'https://geonic-reader-backend.onrender.com',                         // Deine Backend-URL
@@ -12,5 +12,5 @@ export default defineConfig({
 
       },
     },
-  },
+  }, */
 });

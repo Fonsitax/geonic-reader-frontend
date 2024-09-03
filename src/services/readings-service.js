@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 function getAllReadings() {
-    return axios.get('/api/readings/all')
+    return axios.get('https://geonic-reader-backend.onrender.com/readings/all')
         .then((response) => {
             return response.data;
         })
@@ -11,7 +11,7 @@ function getAllReadings() {
 }
 
 function getReadingById(id) {
-    return axios.get(`/api/readings/id/${id}`)
+    return axios.get(`https://geonic-reader-backend.onrender.com/readings/id/${id}`)
         .then((response) => {
             return response.data;
         })
@@ -21,7 +21,7 @@ function getReadingById(id) {
 }
 
 function getReadingByCountry(country) {
-    return axios.get(`/api/readings/country/${country}`)
+    return axios.get(`https://geonic-reader-backend.onrender.com/readings/country/${country}`)
         .then((response) => {
             return response.data;
         })
