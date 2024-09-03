@@ -9,7 +9,7 @@ export default defineConfig({
       '/api': {
         target: 'https://geonic-reader-backend.onrender.com',                         // Deine Backend-URL
         changeOrigin: true,                                     // Changes the origin of the host header to the target URL
-        rewrite: (path) => path.replace(/^\/api/, ''),         // Rewrite the path to remove /api from the URL
+
       },
     },
   },
