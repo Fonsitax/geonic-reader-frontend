@@ -6,7 +6,8 @@ import BoldLetterSetting from './bionicSettings/bold-letter-setting.jsx';
 const MyConverter = () => {
     const [userInput, setUserInput] = useState('');
     const [numberOfBoldLetters, setNumberOfBoldLetters] = useState(2); // Default number of bold letters
-    const [isVisible, setIsVisible] = useState(false); // State to manage visibility
+    const [isVisible, setIsVisible] = useState(false); // State to manage visibility of main content
+    const [isPopoverVisible, setPopoverVisible] = useState(false); // State to manage visibility of popover
 
     const handleInputChange = (e) => {
         setUserInput(e.target.value);
@@ -18,6 +19,14 @@ const MyConverter = () => {
 
     const toggleVisibility = () => {
         setIsVisible(!isVisible);
+    };
+
+    const togglePopover = () => {
+        setPopoverVisible(!isPopoverVisible);
+    };
+
+    const closePopover = () => {
+        setPopoverVisible(false);
     };
 
     return (
@@ -32,6 +41,14 @@ const MyConverter = () => {
                 </svg>
             </button>
 
+            {isPopoverVisible && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" onClick={closePopover}>
+                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full" onClick={(e) => e.stopPropagation()}>
+                        <p className="text-gray-700">This is a popover text box!</p>
+                    </div>
+                </div>
+            )}
+
             {isVisible && (
                 <main className="p-6 max-w-4xl mx-auto mt-10 mb-10">
                     <div className="flex flex-col md:flex-row gap-6 mb-8">
@@ -44,7 +61,7 @@ const MyConverter = () => {
                                 id="user-input"
                                 value={userInput}
                                 onChange={handleInputChange}
-                                placeholder="Type your text here..."
+                                placeholder="Insert your text here..."
                                 className="flex-1 p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             />
                         </div>

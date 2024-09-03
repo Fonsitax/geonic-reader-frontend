@@ -8,12 +8,15 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="bg-indigo-900 text-indigo-100 py-10 px-4 md:px-8">
+    <section id= "FAQ">
+          <div className="bg-indigo-900 text-indigo-100 py-10 px-4 md:px-8">
       <div className="max-w-3xl mx-auto mt-10 mb-10">
         <h2 className="text-4xl font-extrabold text-indigo-300 mb-8 text-center lg:text-5xl relative">
+          
           <span className="relative before:content-[''] before:block before:absolute before:left-0 before:w-full before:h-1 before:bg-indigo-300 before:transition-all before:duration-300 before:bottom-[-0.5rem] hover:before:scale-x-100 before:scale-x-0 before:origin-left">
-            Questions & Answers
+            About Geonic Reader°  
           </span>
+        
         </h2>
 
         <div className="space-y-4">
@@ -59,6 +62,8 @@ const FAQSection = () => {
         </div>
       </div>
     </div>
+    </section>
+
   );
 };
 

@@ -73,7 +73,7 @@ const Carousel = () => {
   return (
     <div id="default-carousel" className="relative mx-auto max-w-screen-xl py-12 mb-10" data-carousel="slide">
       {/* Carousel Wrapper */}
-      <div className="relative overflow-hidden rounded-lg">
+      <div className="relative overflow-hidden ">
         {/* Carousel Items */}
         <div className="relative h-64 md:h-80 lg:h-96">
           {/* Item 1 */}

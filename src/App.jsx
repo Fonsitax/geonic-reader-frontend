@@ -7,6 +7,9 @@ import ReadingText from "./pages/ReadingText.jsx";
 import Home from './pages/Home.jsx';
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MyConverter from "./components/my-converter.jsx";
+import FAQSection from "./components/homePage/question-ask-section.jsx";
+import HeroSection from "./components/homePage/hero-section.jsx";
 
 const App = () => {
     return (
@@ -20,6 +23,9 @@ const App = () => {
                     <Route path="/readings/:search" element={<Readings/>}/>
                     <Route path="/reading/:id" element={<ReadingText/>}/>
                     <Route path="/favorited" element={<Favorites/>}/>
+                    <Route path="/favorited" element={<FAQSection/>}/>
+                    <Route path="/myconverter" element={<MyConverter/>}/>
+                    <Route path="/" element={<HeroSection />} /> 
                 </Routes>
                 <AppFooter/>
             </Router>

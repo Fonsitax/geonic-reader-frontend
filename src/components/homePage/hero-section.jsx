@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+import FAQSection from './question-ask-section';
 
 const HeroSection = () => {
   return (
     <section>
       <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-        <div className="flex flex-col items-center lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
           {/* Text Content */}
           <div className="lg:w-1/2">
             <h1 className="mb-6 text-4xl font-extrabold tracking-tight leading-none text-indigo-900 md:text-5xl lg:text-6xl relative group">
@@ -17,8 +19,8 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
               <Link
-                to="/get-started"
-                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-indigo-800 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 dark:focus:ring-indigo-900"
+                to="/readings"
+                className="inline-flex justify-center items-center mr-8 py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-indigo-800 hover:bg-indigo-900 focus:ring-4 focus:ring-indigo-300 dark:focus:ring-indigo-900"
               >
                 Get started
                 <svg
@@ -37,28 +39,25 @@ const HeroSection = () => {
                   />
                 </svg>
               </Link>
-              <Link
-                to="/learn-more"
-                className="inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-indigo-800 rounded-lg border border-indigo-800 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-indigo-400"
+              <ScrollLink
+                to="FAQ"
+                smooth={true}
+                duration={200}
+                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-indigo-800 rounded-lg border border-indigo-800 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-indigo-400"
               >
                 Learn more
-              </Link>
+              </ScrollLink>
             </div>
           </div>
-          
-          {/* Image Section */}
-          <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
-            <a
-              href="#"
-              className="relative group"
-              aria-label="View Geonic Reader"
-            >
+
+          {/* Image Content */}
+          <div className="lg:w-1/2 mt-8 lg:mt-0 lg:flex lg:justify-end">
+            <a href="https://imgur.com/qflJTj5" target="_blank" rel="noopener noreferrer">
               <img
-                src="https://i.imgur.com/RIvc7aF.png"
+                src="https://i.imgur.com/qflJTj5.png"
                 alt="Geonic Reader"
-                className="w-full rounded-lg transition-transform duration-300 group-hover:underline"
+                className="w-full max-w-xs lg:max-w-md transition-transform duration-300 hover:scale-105 hover:shadow-lg rounded-lg"
               />
-              <span className="absolute bottom-[-10px] left-0 w-full h-1 bg-indigo-800 transition-transform duration-300 transform scale-x-0 group-hover:scale-x-100"></span>
             </a>
           </div>
         </div>

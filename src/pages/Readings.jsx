@@ -13,6 +13,7 @@ const Readings = () => {
     const [alertType, setAlertType] = React.useState('info'); // info, success, error
     const { search } = useParams();
     const navigate = useNavigate();
+    
 
     React.useEffect(() => {
         const fetchReadings = async () => {
