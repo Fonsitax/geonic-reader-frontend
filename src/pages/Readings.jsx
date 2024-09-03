@@ -159,7 +159,7 @@ const Readings = () => {
             </div>
 
             <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
-                {readings.length > 0 ? (
+                {readings?.length > 0? (
                     readings.map((reading) => (
                         <ReadingCard
                             key={reading.id}
