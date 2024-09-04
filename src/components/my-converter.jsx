@@ -7,6 +7,7 @@ const MyConverter = () => {
     const [numberOfBoldLetters, setNumberOfBoldLetters] = useState(2); // Default number of bold letters
     const [isVisible, setIsVisible] = useState(false); // State to manage visibility of main content
     const [isPopoverVisible, setPopoverVisible] = useState(false); // State to manage visibility of popover
+    const targetRef = React.useRef(null);
 
     const handleInputChange = (e) => {
         setUserInput(e.target.value);
@@ -18,7 +19,22 @@ const MyConverter = () => {
 
     const toggleVisibility = () => {
         setIsVisible(!isVisible);
+
+        setTimeout(() => {
+            if (!isVisible) {
+                handleScrollToRef()
+            }
+        }, 500)
+
     };
+
+
+    const handleScrollToRef = () => {
+        if (targetRef.current) {
+            targetRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
 
     const togglePopover = () => {
         setPopoverVisible(!isPopoverVisible);
@@ -84,7 +100,7 @@ const MyConverter = () => {
                     </div>
 
                     {/* Bionic Setting Menu */}
-                    <div className="mt-10">
+                    <div className="mt-10" ref={targetRef}>
                         <BoldLetterSetting
                             handleChangeBoldLetter={handleBoldLetterChange}
                             preSelection={numberOfBoldLetters}
