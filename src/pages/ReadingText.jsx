@@ -8,7 +8,7 @@ import RightDrawer from "../components/right-drawer.jsx";
 const ReadingText = () => {
     const { id } = useParams();
     const [reading, setReading] = useState(null); // Set initial state to null
-    const [numberOfBoldLetters, setNumberOfBoldLetters] = useState(0);
+    const [numberOfBoldLetters, setNumberOfBoldLetters] = useState(2);
     const [textColorClass, setTextColorClass] = useState('text-indigo-800');
     const [themeColorClass, setThemeColorClass] = useState('bg-gray-50');
     const [fontSize, setFontSize] = useState(16);
@@ -52,7 +52,8 @@ const ReadingText = () => {
     }
 
     return (
-        <div className={`${themeColorClass} ${textColorClass} mt-48 mb-20 border-2 border-indigo-900 container mx-auto p-4 rounded-2xl max-w-screen-lg`}>
+        <div
+            className={`${themeColorClass} ${textColorClass} mt-48 mb-20 border-2 border-indigo-900 container mx-auto p-4 rounded-2xl max-w-screen-lg`}>
             <div className="flex flex-col md:flex-row justify-end items-start md:ml-auto">
                 <DrawerComponent reading={reading}/>
                 <RightDrawer
@@ -76,15 +77,15 @@ const ReadingText = () => {
                 </h1>
             </div>
 
-            <div style={{ fontSize: `${fontSize}px`, whiteSpace: 'pre-wrap' }}>
-                <div className="leading-loose mb-5 mt-10 mx-auto sm:mx-14 text-left">
+            <div style={{ fontSize: `${fontSize}px`, whiteSpace: 'pre-wrap' }} className="text-justify">
+                <div className="leading-loose mb-5 mt-10 mx-auto sm:mx-14">
                     <BionicConverter
                         text={reading.description || ''}
                         numberOfBoldLetters={numberOfBoldLetters}
                     />
                 </div>
 
-                <div className="leading-loose mx-auto sm:mx-14 text-left mb-24">
+                <div className="leading-loose mx-auto sm:mx-14 mb-24">
                     <BionicConverter
                         text={reading.text || ''}
                         numberOfBoldLetters={numberOfBoldLetters}
