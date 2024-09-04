@@ -2,7 +2,7 @@ import React from "react";
 
 const BionicConverter = ({ text, numberOfBoldLetters }) => {
     if (!text) {
-        return <div>No text available!</div>
+        return <div></div>
     }
     const wordArray = text.split(' ');
 
