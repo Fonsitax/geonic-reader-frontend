@@ -61,6 +61,7 @@ const ReadingText = () => {
                     handleChangeTextColor={handleChangeTextColor}
                     handleChangeThemeColor={handleChangeThemeColor}
                     handleChangeFontSize={handleChangeFontSize}
+                    preSelectionBoldLetter={numberOfBoldLetters}
                 />
             </div>
 
