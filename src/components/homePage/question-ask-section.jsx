@@ -101,7 +101,7 @@ const faqData = [
   {
     question: 'What if I can’t find information about the country I’m interested in?',
     answer:
-      'We want to help you uncover every corner of the globe! If you’re missing information on a specific country or topic, let us know. Drop us a message at example@email.com with your suggestions, and we’ll do our best to add it for you. Your feedback helps us grow and improve!'
+      'We want to help you uncover every corner of the globe! If you’re missing information on a specific country or topic, let us know. Drop us a message at y.muansawad@gmail.com with your suggestions, and we’ll do our best to add it for you. Your feedback helps us grow and improve!'
   },
 ];
 
