@@ -5,7 +5,8 @@ const RightDrawer = ({
                          handleChangeBoldLetter,
                          handleChangeTextColor,
                          handleChangeThemeColor,
-                         handleChangeFontSize
+                         handleChangeFontSize,
+                         preSelectionBoldLetter
                      }) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -65,6 +66,7 @@ const RightDrawer = ({
                     handleChangeTextColor={handleChangeTextColor}
                     handleChangeThemeColor={handleChangeThemeColor}
                     handleChangeFontSize={handleChangeFontSize}
+                    preSelectionBoldLetter={preSelectionBoldLetter}
                 ></BionicSettingMenu>
 
 

@@ -3,9 +3,9 @@ import ReadingCard from "../components/reading-card.jsx";
 
 const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
-    const [showAlert, setShowAlert] = useState(false);
-    const [alertMessage, setAlertMessage] = useState('');
-    const [alertType, setAlertType] = useState('info'); // info, success, error
+    // const [showAlert, setShowAlert] = useState(false);
+    // const [alertMessage, setAlertMessage] = useState('');
+    // const [alertType, setAlertType] = useState('info'); // info, success, error
 
     useEffect(() => {
         try {
@@ -16,12 +16,12 @@ const Favorites = () => {
         }
     }, []);
 
-    useEffect(() => {
-        if (showAlert) {
-            const timer = setTimeout(() => setShowAlert(false), 3000);
-            return () => clearTimeout(timer);
-        }
-    }, [showAlert]);
+    // useEffect(() => {
+    //     if (showAlert) {
+    //         const timer = setTimeout(() => setShowAlert(false), 3000);
+    //         return () => clearTimeout(timer);
+    //     }
+    // }, [showAlert]);
 
     const handleRemoveReading = (id) => {
         const readingToRemove = favorites.find((reading) => reading.id === id);
@@ -29,19 +29,19 @@ const Favorites = () => {
             const newFavorites = favorites.filter((reading) => reading.id !== id);
             setFavorites(newFavorites);
             localStorage.setItem('favoriteReadings', JSON.stringify(newFavorites));
-            
-            setTimeout(() => {
-                setAlertMessage(`${readingToRemove.title} has been removed from your favorites.`);
-                setAlertType('error');
-                setShowAlert(true);  
-            }, 0);    
+
+            // setTimeout(() => {
+            //     setAlertMessage(`${readingToRemove.title} has been removed from your favorites.`);
+            //     setAlertType('error');
+            //     setShowAlert(true);
+            // }, 0);
         }
     };
 
     return (
         <div className="flex flex-col min-h-screen">
             {/* Alert Message */}
-            {showAlert && (
+            {/*{showAlert && (
                 <div
                     className="fixed inset-0 flex items-center justify-center z-50"
                     role="alert"
@@ -73,7 +73,7 @@ const Favorites = () => {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
 
             {/* Main Content */}
             <main className="flex-grow mt-48 mb-20">
@@ -89,16 +89,22 @@ const Favorites = () => {
                             fill="none"
                             viewBox="0 0 24 24"
                         >
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 11V8a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4H5m14-6V8a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4h-1"/>
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                  d="M10 11V8a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4H5m14-6V8a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4h-1"/>
                         </svg>
                         <blockquote className="text-xl italic font-semibold text-gray-900 dark:text-white">
-                            <p>“Our favorite readings are like windows to the world, offering a glimpse into the wonders of geography and the richness of our global heritage.”</p>
+                            <p>“Our favorite readings are like windows to the world, offering a glimpse into the wonders
+                                of geography and the richness of our global heritage.”</p>
                         </blockquote>
                         <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
-                            <img className="w-8 h-8 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Michael Gough"/>
-                            <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+                            <img className="w-8 h-8 rounded-full"
+                                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
+                                 alt="Michael Gough"/>
+                            <div
+                                className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
                                 <cite className="pe-3 font-medium text-gray-900 dark:text-white">Michael Gough</cite>
-                                <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">Geography Enthusiast</cite>
+                                <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">Geography
+                                    Enthusiast</cite>
                             </div>
                         </figcaption>
                     </figure>
@@ -108,7 +114,8 @@ const Favorites = () => {
                 <hr className="border-t border-gray-300 dark:border-gray-700 my-8 mx-auto max-w-4xl"/>
 
                 {/* Favorites Grid */}
-                <div className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
+                <div
+                    className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
                     {favorites.length > 0 ? (
                         favorites.map((reading) => (
                             <ReadingCard

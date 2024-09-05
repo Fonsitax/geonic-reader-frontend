@@ -1,6 +1,6 @@
 import React from "react";
 
-const MAX_FONT_SIZE = 32;
+const MAX_FONT_SIZE = 54;
 const MIN_FONT_SIZE = 10;
 
 const FontSizeSetting = ({ handleChangeFontSize }) => {

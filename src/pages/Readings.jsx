@@ -8,12 +8,12 @@ const Readings = () => {
     const [readings, setReadings] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState(null);
-    const [showAlert, setShowAlert] = React.useState(false);
-    const [alertMessage, setAlertMessage] = React.useState('');
-    const [alertType, setAlertType] = React.useState('info'); // info, success, error
+    // const [showAlert, setShowAlert] = React.useState(false);
+    // const [alertMessage, setAlertMessage] = React.useState('');
+    // const [alertType, setAlertType] = React.useState('info'); // info, success, error
     const { search } = useParams();
     const navigate = useNavigate();
-    
+
 
     React.useEffect(() => {
         const fetchReadings = async () => {
@@ -40,10 +40,10 @@ const Readings = () => {
     };
 
     const displayAlert = (message, type) => {
-        setAlertMessage(message);
-        setAlertType(type);
-        setShowAlert(true);
-        setTimeout(() => setShowAlert(false), 3000); 
+        // setAlertMessage(message);
+        // setAlertType(type);
+        // setShowAlert(true);
+        // setTimeout(() => setShowAlert(false), 3000);
     };
 
     const addToFavorites = (id) => {
@@ -68,7 +68,7 @@ const Readings = () => {
         const favoriteReadings = JSON.parse(localStorage.getItem('favoriteReadings')) || [];
         const newFavorites = favoriteReadings.filter((reading) => reading.id !== id);
         localStorage.setItem('favoriteReadings', JSON.stringify(newFavorites));
-        
+
         const removeReading = readings.find(r => r.id === id);
         if (removeReading) {
             setTimeout(() => {
@@ -77,19 +77,19 @@ const Readings = () => {
         }
     };
 
-    React.useEffect(() => {
-        // Hide the alert automatically if it's shown
-        if (showAlert) {
-            const timer = setTimeout(() => setShowAlert(false), 3000);
-            return () => clearTimeout(timer);
-        }
-    }, [showAlert]);
+    // React.useEffect(() => {
+    //     // Hide the alert automatically if it's shown
+    //     if (showAlert) {
+    //         const timer = setTimeout(() => setShowAlert(false), 3000);
+    //         return () => clearTimeout(timer);
+    //     }
+    // }, [showAlert]);
 
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800">
                 <div className="flex flex-col items-center justify-center">
-                    <SearchBar onSearch={handleSearch} />
+                    <SearchBar onSearch={handleSearch}/>
                     <div role="status" className="flex items-center justify-center mt-4">
                         <svg
                             aria-hidden="true"
@@ -121,7 +121,7 @@ const Readings = () => {
     return (
         <div>
             {/* Alert Message */}
-            {showAlert && (
+            {/* showAlert && (
                 <div
                     className="fixed inset-0 flex items-center justify-center z-50"
                     role="alert"
@@ -152,14 +152,15 @@ const Readings = () => {
                         </div>
                     </div>
                 </div>
-            )}
+            ) */}
 
             <div className="mt-48">
-                <SearchBar onSearch={handleSearch} />
+                <SearchBar onSearch={handleSearch}/>
             </div>
 
-            <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
-                {readings?.length > 0? (
+            <div
+                className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+                {readings?.length > 0 ? (
                     readings.map((reading) => (
                         <ReadingCard
                             key={reading.id}

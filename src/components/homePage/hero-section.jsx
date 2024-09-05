@@ -51,20 +51,20 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Image Content */}
-          <div className="lg:w-1/2 mt-8 lg:mt-0 lg:flex lg:justify-end">
-            <a href="https://imgur.com/qflJTj5" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://i.imgur.com/qflJTj5.png"
-                alt="Geonic Reader"
-                className="w-full max-w-xs lg:max-w-md transition-transform duration-300 hover:scale-105 hover:shadow-lg rounded-lg"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+                    {/* Image Content */}
+                    <div className="lg:w-1/2 mt-8 lg:mt-0 lg:flex lg:justify-end">
+                        <div rel="noopener noreferrer">
+                            <img
+                                src="https://i.imgur.com/qflJTj5.png"
+                                alt="Geonic Reader"
+                                className="w-full max-w-xs lg:max-w-md transition-transform duration-300 hover:scale-105 hover:shadow-lg rounded-lg"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default HeroSection;
