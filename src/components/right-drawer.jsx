@@ -33,9 +33,8 @@ const RightDrawer = ({
 
             {/* Drawer component */}
             <div
-                className={`fixed top-0 right-0 z-40 h-screen p-4 mt-28 overflow-y-auto transition-transform bg-gray-50 w-100 ${
-                    isOpen ? "translate-x-0" : "translate-x-full"
-                }`}
+                className={` overflow-y-autofixed top-0 right-0 z-40 h-screen p-4 mt-28 overflow-y-auto transition-transform bg-gray-50 w-100 
+                    ${isOpen ? "translate-x-0" : "translate-x-full"}`}
             >
 
                 <button

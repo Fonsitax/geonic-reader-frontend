@@ -11,9 +11,9 @@ const FAQSection = () => {
     <section id= "FAQ">
           <div className="bg-indigo-900 text-indigo-100 py-10 px-4 md:px-8">
       <div className="max-w-3xl mx-auto mt-10 mb-10">
-        <h2 className="text-4xl font-extrabold text-indigo-300 mb-8 text-center lg:text-5xl relative">
+        <h2 className="text-4xl font-extrabold text-indigo-100 mb-8 text-center lg:text-5xl relative">
           
-          <span className="relative before:content-[''] before:block before:absolute before:left-0 before:w-full before:h-1 before:bg-indigo-300 before:transition-all before:duration-300 before:bottom-[-0.5rem] hover:before:scale-x-100 before:scale-x-0 before:origin-left">
+          <span className="relative before:content-[''] before:block before:absolute before:left-0 before:w-full before:h-1 before:bg-indigo-100 before:transition-all before:duration-300 before:bottom-[-0.5rem] hover:before:scale-x-100 before:scale-x-0 before:origin-left">
             About Geonic Reader°  
           </span>
         
@@ -25,7 +25,7 @@ const FAQSection = () => {
               <h2 id={`accordion-collapse-heading-${index}`}>
                 <button
                   type="button"
-                  className="flex items-center justify-between w-full p-5 font-medium text-indigo-300 border-b-0 border-indigo-700 rounded-t-lg focus:ring-4 focus:ring-indigo-200 dark:focus:ring-indigo-800 dark:border-indigo-800 dark:text-indigo-400 hover:bg-indigo-800 hover:text-indigo-100 gap-3"
+                  className="flex items-center justify-between w-full p-5 font-medium text-indigo-100 border-b-0 border-indigo-700 rounded-t-lg focus:ring-4 focus:ring-indigo-200 dark:focus:ring-indigo-800 dark:border-indigo-800 dark:text-indigo-400 hover:bg-indigo-800 hover:text-indigo-100 gap-3"
                   onClick={() => toggleAccordion(index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`accordion-collapse-body-${index}`}
