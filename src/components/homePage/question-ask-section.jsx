@@ -28,7 +28,7 @@ const FAQSection = () => {
       className="bg-indigo-900 text-indigo-100 min-h-screen flex flex-col justify-center items-center px-4 md:px-8 pb-10"
     >
       {/* Section Header */}
-      <h2 className="text-4xl font-extrabold text-indigo-100 mt-10 text-center lg:text-5xl">
+      <h2 className="text-4xl  text-indigo-100 mt-10 text-left lg:text-5xl">
         <span className="relative before:content-[''] before:block before:absolute before:left-0 before:w-full before:h-1 before:bg-indigo-100 before:transition-all before:duration-300 before:bottom-[-0.5rem] hover:before:scale-x-100 before:scale-x-0 before:origin-left">
           {convertToBionic('About Geonic Reader°')}
         </span>

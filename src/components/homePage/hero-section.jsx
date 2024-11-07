@@ -29,13 +29,13 @@ const HeroSection = () => {
       <div className="flex flex-col lg:flex-row items-center w-full h-full ">
         {/* Left Column: Text Content */}
         <div
-          className="lg:w-1/2 flex flex-col justify-center px-12 space-y-6 pt-36"
+          className="lg:w-1/2 flex flex-col justify-center px-12 space-y-6 pt-44"
           data-aos="fade-right"
         >
            <div className="relative group">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight relative pb-5">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight relative pb-5">
               <span className="text-indigo-900 group-hover:text-indigo-300">
-                {convertToBionic('Welcome to Geonic Reader°')}
+                {convertToBionic('Geonic Reader°: Unlock the World, One Word at a Time.')}
               </span>
               {/* Stylish Underline Effect */}
               <span className="absolute bottom-[-5px] left-0 w-full h-[3px] bg-gradient-to-r from-indigo-700 via-indigo-200 to-indigo-300 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
@@ -43,7 +43,7 @@ const HeroSection = () => {
           </div>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
             {convertToBionic(
-              ' ➡️ Learn faster, memorize better. Unlock fascinating geography facts across the globe. '
+              ' ➡️ Learn faster, memorize better. Unlock fascinating geography facts across the globe '
             )}
           </p>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
@@ -53,7 +53,7 @@ const HeroSection = () => {
           </p>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
             {convertToBionic(
-              '➡️ Free of charge and no account required. '
+              '➡️ Free of charge and no account required '
             )}
           </p>
          
@@ -80,13 +80,14 @@ const HeroSection = () => {
               </svg>
             </Link>
             <ScrollLink
-              to="FAQ"
-              smooth={true}
-              duration={200}
-              className="inline-flex items-center py-3 px-8 text-sm md:text-base font-medium text-indigo-800 rounded-lg border-2 border-indigo-800 hover:bg-gray-100 hover:text-gray-900 focus:ring-4 focus:ring-indigo-400 transition-all"
-            >
-              Learn more
-            </ScrollLink>
+  to="FAQ"
+  smooth={true}
+  duration={200}
+  className="cursor-pointer inline-flex items-center py-3 px-8 text-sm md:text-base font-medium text-indigo-800 rounded-lg border-2 border-indigo-800 transition-all duration-300 hover:bg-indigo-800 hover:text-white hover:border-indigo-900 transform hover:scale-105 focus:ring-4 focus:ring-indigo-400"
+>
+  Learn more
+</ScrollLink>
+
           </div>
         </div>
 

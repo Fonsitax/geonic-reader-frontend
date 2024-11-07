@@ -21,7 +21,7 @@ const AppHeader = () => {
     alt="Geonic Reader Logo"
     className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 mr-4"
   />
-  <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold relative">
+  <h1 className="text-2xl md:text-3xl lg:text-4xl relative">
     <span className="text-indigo-900 dark:text-white group-hover:text-indigo-300">
       Geonic Reader°
     </span>
