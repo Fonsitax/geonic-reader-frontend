@@ -29,7 +29,7 @@ const HeroSection = () => {
       <div className="flex flex-col lg:flex-row items-center w-full h-full ">
         {/* Left Column: Text Content */}
         <div
-          className="lg:w-1/2 flex flex-col justify-center px-12 space-y-6 pt-28"
+          className="lg:w-1/2 flex flex-col justify-center px-12 space-y-6 pt-36"
           data-aos="fade-right"
         >
            <div className="relative group">
@@ -43,7 +43,7 @@ const HeroSection = () => {
           </div>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
             {convertToBionic(
-              ' Learn faster, memorize better. Unlock fascinating geography facts across the globe. '
+              ' 🗺️ Learn faster, memorize better. Unlock fascinating geography facts across the globe. '
             )}
           </p>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
