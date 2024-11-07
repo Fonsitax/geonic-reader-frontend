@@ -43,7 +43,7 @@ const HeroSection = () => {
           </div>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
             {convertToBionic(
-              '🗺️ Learn faster, memorize better. Unlock fascinating geography facts across the globe. '
+              ' Learn faster, memorize better. Unlock fascinating geography facts across the globe. '
             )}
           </p>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
@@ -92,15 +92,18 @@ const HeroSection = () => {
 
         {/* Right Column: Image Content */}
         <div
-          className="lg:w-1/2 flex justify-center items-center"
-          data-aos="fade-left"
-        >
-          <img
-            src="src/assets/HeroImage.png"
-            alt="Geonic Reader"
-            className="w-full max-w-md md:max-w-lg lg:max-w-full h-auto pt-9"
-          />
-        </div>
+  className="lg:w-1/2 flex justify-center items-center"
+  data-aos="fade-left"
+>
+  <a href="/readings" aria-label="Navigate to destination page">
+    <img
+      src="https://i.imgur.com/gleAChc.png"
+      alt="Geonic Reader"
+      className="w-full max-w-md md:max-w-lg lg:max-w-full h-auto pt-9"
+    />
+  </a>
+</div>
+
       </div>
     </section>
   );
