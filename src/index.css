@@ -5,7 +5,7 @@
 
 /* Global styles */
 body {
-    @apply bg-indigo-50 m-0 p-0 font-sans;
+    @apply bg-blue-50 m-0 p-0 font-sans;
 }
 
 html {
