@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useMyContext } from '../context/MyContext';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import logo from '../assets/letter-g.png';
 
 const AppHeader = () => {
   const { basename } = useMyContext();
@@ -16,7 +17,7 @@ const AppHeader = () => {
   className="relative flex items-center group ml-6 md:ml-12 lg:ml-16"
 >
   <img
-    src="src/assets/letter-g.png" // Replace with the actual logo path
+    src={logo}// Replace with the actual logo path
     alt="Geonic Reader Logo"
     className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 mr-4"
   />

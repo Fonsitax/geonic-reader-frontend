@@ -43,17 +43,17 @@ const HeroSection = () => {
           </div>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
             {convertToBionic(
-              ' 🗺️ Learn faster, memorize better. Unlock fascinating geography facts across the globe. '
+              ' ➡️ Learn faster, memorize better. Unlock fascinating geography facts across the globe. '
             )}
           </p>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
             {convertToBionic(
-              ' 🗺️ Dive into interactive cards with Bionic reading and more'
+              ' ➡️ Dive into interactive cards with Bionic reading and more'
             )}
           </p>
           <p className="text-lg font-medium text-indigo-800 lg:text-xl leading-relaxed">
             {convertToBionic(
-              '🗺️ Free of charge and no account required. '
+              '➡️ Free of charge and no account required. '
             )}
           </p>
          
