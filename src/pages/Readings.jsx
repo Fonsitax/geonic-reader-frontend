@@ -92,21 +92,25 @@ const Readings = () => {
           `${removeReading.title} has been removed from your favorites!`,
           "error"
         );
-      }, 0); // 0 ms delay allows the state to update before showing the alert
+      }, 0);
     }
   };
-
-  // React.useEffect(() => {
-  //     // Hide the alert automatically if it's shown
-  //     if (showAlert) {
-  //         const timer = setTimeout(() => setShowAlert(false), 3000);
-  //         return () => clearTimeout(timer);
-  //     }
-  // }, [showAlert]);
 
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800">
+        {/* Alert Message */}
+        <div>
+          {/* Conditionally render the Alert component */}
+          {showAlert && (
+            <Alert
+              message="Loading the readings might take some seconds due to the free database version.
+            Thank you for your patience!"
+              onClose={() => setShowAlert(false)}
+            />
+          )}
+        </div>
+
         <div className="flex flex-col items-center justify-center">
           <SearchBar onSearch={handleSearch} />
           <div role="status" className="flex items-center justify-center mt-4">
@@ -139,50 +143,6 @@ const Readings = () => {
 
   return (
     <div>
-      {/* Alert Message */}
-      <div>
-        {/* Conditionally render the Alert component */}
-        {showAlert && (
-          <Alert
-            message="Loading the readings might take a few seconds due to the free database version.
-            Thank you for your patience!"
-            onClose={() => setShowAlert(false)}
-          />
-        )}
-      </div>
-      {/* showAlert && (
-                <div
-                    className="fixed inset-0 flex items-center justify-center z-50"
-                    role="alert"
-                >
-                    <div
-                        className={`max-w-lg w-full p-6 text-white border rounded-lg shadow-lg ${alertType === 'success' ? 'bg-green-500 border-green-600' : alertType === 'error' ? 'bg-red-500 border-red-600' : 'bg-blue-500 border-blue-600'}`}
-                    >
-                        <div className="flex items-start space-x-4">
-                            <svg
-                                className={`w-8 h-8 ${alertType === 'success' ? 'text-green-200' : alertType === 'error' ? 'text-red-200' : 'text-blue-200'}`}
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path d={alertType === 'success'
-                                    ? "M10 1.5a8.5 8.5 0 1 0 8.5 8.5A8.51 8.51 0 0 0 10 1.5ZM8.293 6.293a1 1 0 0 1 1.414 0L10 6.586l.293-.293a1 1 0 0 1 1.414 1.414L10 9.414l-2.707-2.707a1 1 0 0 1 0-1.414ZM10 16a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-                                    : alertType === 'error'
-                                    ? "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
-                                    : "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
-                                }/>
-                            </svg>
-                            <div>
-                                <span className="font-medium">
-                                    {alertType === 'success' ? 'Success!' : alertType === 'error' ? 'Error!' : 'Info!'}
-                                </span> {alertMessage}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ) */}
-
       <div className="mt-48">
         <SearchBar onSearch={handleSearch} />
       </div>
