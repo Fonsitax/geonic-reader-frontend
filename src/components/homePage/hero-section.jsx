@@ -4,7 +4,6 @@ import { Link as ScrollLink } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Utility function to convert text to bionic reading format
 const convertToBionic = (text) => {
   return text.split(" ").map((word, index) => {
     const splitIndex = Math.ceil(word.length / 2);
@@ -27,7 +26,6 @@ const HeroSection = () => {
   return (
     <section className="relative bg-gradient-to-b from-indigo-100 via-blue-50 to-indigo-200 min-h-screen flex items-center">
       <div className="flex flex-col lg:flex-row items-center w-full h-full">
-        {/* Left Column: Text Content */}
         <div
           className="lg:w-1/2 flex flex-col justify-center px-12 space-y-6 pt-44"
           data-aos="fade-right"
@@ -94,11 +92,7 @@ const HeroSection = () => {
           className="lg:w-1/2 flex justify-center items-center"
           data-aos="fade-left"
         >
-          <img
-            src="src/assets/HeroImageGeonicrework1601.png"
-            alt="Geonic Reader"
-            className="w-full max-w-md md:max-w-lg lg:max-w-full h-auto pt-9 shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300"
-          />
+          <img src="/HeroImageGeonicrework1601.png" alt="Hero image" />
         </div>
       </div>
     </section>
