@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AppHeader from "./components/app-header.jsx";
 import AppFooter from "./components/app-footer.jsx";
 import Readings from "./pages/Readings.jsx";
@@ -10,22 +10,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MyConverter from "./components/my-converter.jsx";
 import FAQSection from "./components/homePage/question-ask-section.jsx";
 import HeroSection from "./components/homePage/hero-section.jsx";
-import Alert from "./components/Alert.jsx";
 
 const App = () => {
-  const [showAlert, setShowAlert] = useState(true); // State for the alert visibility
-
   return (
     <div className="flex flex-col min-h-screen">
-      <div>
-        {/* Conditionally render the Alert component */}
-        {showAlert && (
-          <Alert
-            message="Loading the readings might take a few seconds due to the free database version."
-            onClose={() => setShowAlert(false)} // Close alert when button is clicked
-          />
-        )}
-      </div>
       <Router>
         <AppHeader />
         <Routes>
