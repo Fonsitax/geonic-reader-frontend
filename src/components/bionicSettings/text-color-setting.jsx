@@ -46,12 +46,12 @@ const TextColorSetting = ({ handleChangeTextColor }) => {
     <div className="flex flex-col items-center justify-center p-4">
       <h1 className="text-center text-sm font-medium mb-4">Font Color</h1>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-5">
         {buttons.map((button, index) => (
           <button
             key={index}
             type="button"
-            className={`w-10 h-10 rounded-full bg-gradient-to-r ${
+            className={`w-8 h-8 rounded-full bg-gradient-to-r ${
               button.gradient
             } hover:bg-gradient-to-br focus:ring-4 focus:outline-none ${
               button.ring

@@ -18,13 +18,13 @@ const ThemeSetting = ({ handleChangeThemeColor }) => {
   return (
     <div>
       <h1 className="text-center text-sm font-medium mb-4">Paper Color</h1>
-      <div className=" border-black rounded-l flex space-x-4 justify-center ">
+      <div className=" border-black rounded-l flex space-x-2 justify-center ">
         {buttons.map((btn, index) => (
           <button
             key={index}
             className={`${btn.class} ${
               btn.hover
-            } text-white font-bold py-2 px-4 rounded-full w-10 h-10 border-2 ${
+            } text-white font-bold py-2 px-4 w-10 h-10 border-1 ${
               index === selectedButtton ? "ring-4" : ""
             }`}
             onClick={() => handleOnClick(btn.class, index)}
