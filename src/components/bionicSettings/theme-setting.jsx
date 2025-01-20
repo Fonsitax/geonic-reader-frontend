@@ -24,8 +24,8 @@ const ThemeSetting = ({ handleChangeThemeColor }) => {
             key={index}
             className={`${btn.class} ${
               btn.hover
-            } text-white font-bold py-2 px-4 w-10 h-10 border-1 ${
-              index === selectedButtton ? "ring-4" : ""
+            } text-white font-bold py-2 px-4 w-10 h-10 border-2 ${
+              index === selectedButtton ? "ring-2" : ""
             }`}
             onClick={() => handleOnClick(btn.class, index)}
           ></button>

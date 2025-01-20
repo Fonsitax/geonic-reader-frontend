@@ -53,7 +53,7 @@ const TextColorSetting = ({ handleChangeTextColor }) => {
             type="button"
             className={`w-8 h-8 rounded-full bg-gradient-to-r ${
               button.gradient
-            } hover:bg-gradient-to-br focus:ring-4 focus:outline-none ${
+            } hover:bg-gradient-to-br focus:ring-2 focus:outline-none ${
               button.ring
             } ${
               index === selectedButtton

@@ -11,7 +11,7 @@ const BoldLetterSetting = ({ handleChangeBoldLetter, preSelection }) => {
 
   const buttons = [
     { numberBold: 0 },
-    { numberBold: 1 },
+    // { numberBold: 1 },
     { numberBold: 2 },
     { numberBold: 3 },
   ];

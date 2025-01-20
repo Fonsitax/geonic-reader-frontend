@@ -46,11 +46,6 @@ const FloatingMenu = ({
           role="menu"
           aria-label="Settings menu"
         >
-          <div className="mb-2">
-            <h2 className="text-lg font-semibold text-gray-800">
-              Bionic Settings
-            </h2>
-          </div>
           <BionicSettingMenu
             handleChangeBoldLetter={handleChangeBoldLetter}
             handleChangeTextColor={handleChangeTextColor}
